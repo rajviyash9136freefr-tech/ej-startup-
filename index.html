@@ -382,31 +382,13 @@
       font-weight: 600;
     }
 
-    /* Backdrop for mobile drawer / bottom sheet */
-    .lang-backdrop {
-      position: fixed;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      z-index: 1040;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.35s ease, visibility 0.35s ease;
-    }
-
-    .lang-backdrop.open {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* Dropdown / Bottom Sheet */
+    /* Desktop Dropdown (Only on screens > 768px) */
     .lang-dropdown {
       position: absolute;
       top: calc(100% + 0.65rem);
       right: 0;
       width: 380px;
-      max-height: 520px;
+      max-height: 500px;
       background-color: rgba(23, 23, 23, 0.98);
       border: 1px solid rgba(243, 239, 230, 0.22);
       box-shadow: 0 24px 48px rgba(0, 0, 0, 0.85);
@@ -426,15 +408,6 @@
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
-    }
-
-    .lang-sheet-handle {
-      display: none;
-      width: 44px;
-      height: 4px;
-      background-color: rgba(243, 239, 230, 0.35);
-      border-radius: 2px;
-      margin: 0.85rem auto 0 auto;
     }
 
     .lang-dropdown-header {
@@ -466,12 +439,6 @@
       color: var(--subtle-on-obsidian);
     }
 
-    .lang-header-actions {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
     .lang-count-badge {
       font-size: 0.62rem;
       padding: 0.25rem 0.55rem;
@@ -481,32 +448,13 @@
       text-transform: uppercase;
     }
 
-    .lang-close-btn {
-      display: none;
-      background: none;
-      border: 1px solid var(--border-on-obsidian);
-      color: var(--color-ivory);
-      width: 32px;
-      height: 32px;
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      transition: var(--transition-smooth);
-    }
-
-    .lang-close-btn:hover {
-      background-color: var(--color-ivory);
-      color: var(--color-obsidian);
-    }
-
     .lang-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1px;
       background-color: rgba(243, 239, 230, 0.08);
       overflow-y: auto;
-      max-height: 420px;
+      max-height: 400px;
     }
 
     .lang-option {
@@ -565,6 +513,186 @@
 
     .lang-option.active .lang-active-check {
       display: block;
+    }
+
+    /* ==========================================================================
+       MOBILE DEDICATED LANGUAGE BOTTOM-SHEET MODAL (Direct child of <body>)
+       Guarantees zero stacking context and zero clipping issues on any phone
+       ========================================================================== */
+    .mobile-lang-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transition: visibility 0.3s ease, opacity 0.3s ease;
+    }
+
+    .mobile-lang-modal.open {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-lang-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .mobile-lang-sheet {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-height: 82vh;
+      max-height: 82dvh;
+      background-color: var(--color-obsidian);
+      border-top: 1px solid rgba(243, 239, 230, 0.22);
+      border-radius: 20px 20px 0 0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 -16px 48px rgba(0, 0, 0, 0.95);
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+
+    .mobile-lang-modal.open .mobile-lang-sheet {
+      transform: translateY(0);
+    }
+
+    .mobile-lang-sheet-handle {
+      width: 44px;
+      height: 4px;
+      background-color: rgba(243, 239, 230, 0.35);
+      border-radius: 2px;
+      margin: 0.85rem auto 0.4rem auto;
+      flex-shrink: 0;
+    }
+
+    .mobile-lang-sheet-header {
+      padding: 0.75rem 1.25rem 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-on-obsidian);
+      background-color: var(--color-obsidian);
+      flex-shrink: 0;
+    }
+
+    .mobile-lang-title-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .mobile-lang-main-title {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-ivory);
+    }
+
+    .mobile-lang-sub-title {
+      font-size: 0.62rem;
+      color: var(--subtle-on-obsidian);
+      letter-spacing: 0.08em;
+    }
+
+    .mobile-lang-close-btn {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 1px solid var(--border-on-obsidian);
+      color: var(--color-ivory);
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: var(--transition-smooth);
+      border-radius: 4px;
+      line-height: 1;
+    }
+
+    .mobile-lang-close-btn:hover {
+      background-color: var(--color-ivory);
+      color: var(--color-obsidian);
+    }
+
+    .mobile-lang-modal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.55rem;
+      padding: 1rem 1.25rem 2.5rem 1.25rem;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      max-height: calc(82dvh - 85px);
+    }
+
+    .mobile-modal-lang-card {
+      padding: 0.85rem 1rem;
+      min-height: 58px;
+      background: rgba(243, 239, 230, 0.05);
+      border: 1px solid var(--border-on-obsidian);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.15rem;
+      text-align: left;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .mobile-modal-lang-card:hover {
+      border-color: var(--color-ivory);
+      background-color: rgba(243, 239, 230, 0.1);
+    }
+
+    .mobile-modal-lang-card.active {
+      background-color: var(--color-ivory);
+      color: var(--color-obsidian);
+      border-color: var(--color-ivory);
+    }
+
+    .mobile-modal-lang-card.active .card-native,
+    .mobile-modal-lang-card.active .card-latin,
+    .mobile-modal-lang-card.active .card-check {
+      color: var(--color-obsidian);
+    }
+
+    .card-native {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--color-ivory);
+      line-height: 1.2;
+    }
+
+    .card-latin {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--subtle-on-obsidian);
+    }
+
+    .card-check {
+      position: absolute;
+      top: 0.85rem;
+      right: 0.85rem;
+      font-size: 0.8rem;
+      color: var(--color-ivory);
     }
 
     /* Mobile Drawer Language Section */
@@ -672,7 +800,7 @@
       box-shadow: none !important;
     }
 
-    /* Responsive Adjustments for Mobile & Tablets */
+    /* Screen Queries */
     @media (max-width: 991px) {
       .lang-label-full {
         display: none;
@@ -688,57 +816,20 @@
     }
 
     @media (max-width: 768px) {
-      .lang-sheet-handle {
-        display: block;
-      }
-      .lang-close-btn {
-        display: flex;
-      }
       .lang-dropdown {
-        position: fixed !important;
-        top: auto !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
-        max-height: 85vh !important;
-        border-top: 1px solid var(--border-on-obsidian) !important;
-        border-left: none !important;
-        border-right: none !important;
-        border-bottom: none !important;
-        border-radius: 20px 20px 0 0 !important;
-        transform: translateY(100%) !important;
-        transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.38s ease !important;
-        box-shadow: 0 -12px 48px rgba(0, 0, 0, 0.95) !important;
-        background-color: rgba(23, 23, 23, 0.99) !important;
-        z-index: 1050 !important;
+        display: none !important; /* CRITICAL: Never show header dropdown on mobile */
       }
-      .lang-dropdown.open {
-        transform: translateY(0) !important;
-      }
-      .lang-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        max-height: calc(85vh - 90px) !important;
-        padding-bottom: 2.5rem !important;
-      }
-      .lang-option {
-        padding: 1rem 1.15rem !important;
-        min-height: 58px !important;
-      }
-      .lang-native {
-        font-size: 1.15rem !important;
-      }
-      .lang-latin {
-        font-size: 0.68rem !important;
+    }
+
+    @media (min-width: 769px) {
+      .mobile-lang-modal {
+        display: none !important; /* Hide mobile modal on desktop */
       }
     }
 
     @media (max-width: 480px) {
-      .mobile-lang-chips {
+      .mobile-lang-modal-grid {
         grid-template-columns: 1fr 1fr;
-      }
-      .lang-grid {
-        grid-template-columns: 1fr 1fr !important;
       }
     }
 
@@ -2030,21 +2121,14 @@
             </svg>
           </button>
 
-          <!-- Backdrop for mobile sheet & outside click -->
-          <div class="lang-backdrop" id="langBackdrop"></div>
-
-          <!-- Language Dropdown (Desktop) / Bottom Sheet (Mobile) -->
-          <div class="lang-dropdown notranslate" id="langDropdown" role="dialog" aria-label="Select Language" translate="no">
-            <div class="lang-sheet-handle"></div>
+          <!-- Desktop Dropdown Menu (Hidden on mobile) -->
+          <div class="lang-dropdown notranslate" id="langDropdown" role="menu" aria-label="Select Language" translate="no">
             <div class="lang-dropdown-header notranslate" translate="no">
               <div class="lang-header-title notranslate" translate="no">
                 <span class="lang-main-title notranslate" translate="no">SELECT LANGUAGE</span>
                 <span class="lang-sub-title notranslate" translate="no">भाषा चुनें</span>
               </div>
-              <div class="lang-header-actions notranslate" translate="no">
-                <span class="lang-count-badge notranslate" translate="no">12 LANGUAGES</span>
-                <button class="lang-close-btn notranslate" id="langCloseBtn" aria-label="Close Language Menu" translate="no">✕</button>
-              </div>
+              <span class="lang-count-badge notranslate" translate="no">12 LANGUAGES</span>
             </div>
             <div class="lang-grid notranslate" id="desktopLangGrid" translate="no">
               <!-- Rendered via JS -->
@@ -2716,6 +2800,27 @@
     </div>
   </div>
 
+  <!-- ==========================================================================
+       DEDICATED MOBILE LANGUAGE BOTTOM-SHEET MODAL (Direct child of <body>)
+       Guarantees 100% full visibility and zero clipping across all mobile devices
+       ========================================================================== -->
+  <div class="mobile-lang-modal notranslate" id="mobileLangModal" translate="no" aria-hidden="true" role="dialog">
+    <div class="mobile-lang-backdrop" id="mobileLangBackdrop"></div>
+    <div class="mobile-lang-sheet notranslate" translate="no">
+      <div class="mobile-lang-sheet-handle"></div>
+      <div class="mobile-lang-sheet-header notranslate" translate="no">
+        <div class="mobile-lang-title-wrap notranslate" translate="no">
+          <span class="mobile-lang-main-title notranslate" translate="no">SELECT LANGUAGE</span>
+          <span class="mobile-lang-sub-title notranslate" translate="no">अपनी पसंदीदा भाषा चुनें (12 Languages)</span>
+        </div>
+        <button type="button" class="mobile-lang-close-btn notranslate" id="mobileLangCloseBtn" aria-label="Close Language Menu" translate="no">✕</button>
+      </div>
+      <div class="mobile-lang-modal-grid notranslate" id="mobileModalLangGrid" translate="no">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification element -->
   <div class="toast-notice" id="toastNotice">Enquiry Form Ready</div>
 
@@ -2964,8 +3069,8 @@
     }
 
     // ==========================================================================
-    // MULTI-LANGUAGE SYSTEM (Top Indian Languages + English)
-    // Protected with notranslate to prevent machine translation of language labels
+    // MULTI-LANGUAGE SYSTEM (Top 12 Indian Languages + English)
+    // Protected with notranslate and translate="no" to prevent translation of language labels
     // ==========================================================================
     const SUPPORTED_LANGS = [
       { code: 'en', native: 'English', latin: 'English', short: 'EN' },
@@ -2984,59 +3089,86 @@
 
     let currentLanguage = localStorage.getItem('preferred_language') || 'en';
 
+    // DOM Elements
     const langBtn = document.getElementById('langBtn');
     const langDropdown = document.getElementById('langDropdown');
-    const langBackdrop = document.getElementById('langBackdrop');
-    const langCloseBtn = document.getElementById('langCloseBtn');
+    const mobileLangModal = document.getElementById('mobileLangModal');
+    const mobileLangBackdrop = document.getElementById('mobileLangBackdrop');
+    const mobileLangCloseBtn = document.getElementById('mobileLangCloseBtn');
     const desktopLangGrid = document.getElementById('desktopLangGrid');
+    const mobileModalLangGrid = document.getElementById('mobileModalLangGrid');
     const mobileLangChips = document.getElementById('mobileLangChips');
     const fullLangLabel = document.getElementById('fullLangLabel');
     const shortLangLabel = document.getElementById('shortLangLabel');
 
-    // Populate Desktop & Mobile Language Selectors
+    // Populate Language UI across Desktop Dropdown, Mobile Modal, and Mobile Drawer
     function renderLanguageOptions() {
-      if (!desktopLangGrid || !mobileLangChips) return;
-      desktopLangGrid.innerHTML = '';
-      mobileLangChips.innerHTML = '';
+      if (desktopLangGrid) desktopLangGrid.innerHTML = '';
+      if (mobileModalLangGrid) mobileModalLangGrid.innerHTML = '';
+      if (mobileLangChips) mobileLangChips.innerHTML = '';
 
       SUPPORTED_LANGS.forEach(lang => {
         const isActive = lang.code === currentLanguage;
 
-        // Desktop / Bottom-Sheet Option
-        const optionBtn = document.createElement('button');
-        optionBtn.className = `lang-option notranslate ${isActive ? 'active' : ''}`;
-        optionBtn.setAttribute('translate', 'no');
-        optionBtn.setAttribute('data-lang', lang.code);
-        optionBtn.innerHTML = `
-          <span class="lang-native notranslate" translate="no">${lang.native}</span>
-          <span class="lang-latin notranslate" translate="no">${lang.latin}</span>
-          <span class="lang-active-check notranslate" translate="no">✓</span>
-        `;
-        optionBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          switchLanguage(lang.code);
-        });
-        desktopLangGrid.appendChild(optionBtn);
+        // 1. Desktop Dropdown Item
+        if (desktopLangGrid) {
+          const optionBtn = document.createElement('button');
+          optionBtn.className = `lang-option notranslate ${isActive ? 'active' : ''}`;
+          optionBtn.setAttribute('translate', 'no');
+          optionBtn.setAttribute('data-lang', lang.code);
+          optionBtn.innerHTML = `
+            <span class="lang-native notranslate" translate="no">${lang.native}</span>
+            <span class="lang-latin notranslate" translate="no">${lang.latin}</span>
+            <span class="lang-active-check notranslate" translate="no">✓</span>
+          `;
+          optionBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeDesktopDropdown();
+            switchLanguage(lang.code);
+          });
+          desktopLangGrid.appendChild(optionBtn);
+        }
 
-        // Mobile Drawer Chip
-        const chipBtn = document.createElement('button');
-        chipBtn.className = `mobile-lang-chip notranslate ${isActive ? 'active' : ''}`;
-        chipBtn.setAttribute('translate', 'no');
-        chipBtn.setAttribute('data-lang', lang.code);
-        chipBtn.innerHTML = `
-          <span class="mobile-lang-chip-native notranslate" translate="no">${lang.native}</span>
-          <span class="mobile-lang-chip-latin notranslate" translate="no">${lang.latin}</span>
-          ${isActive ? '<span class="mobile-lang-chip-check notranslate" translate="no">✓</span>' : ''}
-        `;
-        chipBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          switchLanguage(lang.code);
-          mobileDrawer.classList.remove('open');
-          mobileMenuToggle.classList.remove('active');
-          mobileDrawer.setAttribute('aria-hidden', 'true');
-          document.body.style.overflow = '';
-        });
-        mobileLangChips.appendChild(chipBtn);
+        // 2. Mobile Modal Bottom-Sheet Card
+        if (mobileModalLangGrid) {
+          const cardBtn = document.createElement('button');
+          cardBtn.className = `mobile-modal-lang-card notranslate ${isActive ? 'active' : ''}`;
+          cardBtn.setAttribute('translate', 'no');
+          cardBtn.setAttribute('data-lang', lang.code);
+          cardBtn.innerHTML = `
+            <span class="card-native notranslate" translate="no">${lang.native}</span>
+            <span class="card-latin notranslate" translate="no">${lang.latin}</span>
+            ${isActive ? '<span class="card-check notranslate" translate="no">✓</span>' : ''}
+          `;
+          cardBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeMobileModal();
+            switchLanguage(lang.code);
+          });
+          mobileModalLangGrid.appendChild(cardBtn);
+        }
+
+        // 3. Mobile Navigation Drawer Chip
+        if (mobileLangChips) {
+          const chipBtn = document.createElement('button');
+          chipBtn.className = `mobile-lang-chip notranslate ${isActive ? 'active' : ''}`;
+          chipBtn.setAttribute('translate', 'no');
+          chipBtn.setAttribute('data-lang', lang.code);
+          chipBtn.innerHTML = `
+            <span class="mobile-lang-chip-native notranslate" translate="no">${lang.native}</span>
+            <span class="mobile-lang-chip-latin notranslate" translate="no">${lang.latin}</span>
+            ${isActive ? '<span class="mobile-lang-chip-check notranslate" translate="no">✓</span>' : ''}
+          `;
+          chipBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            switchLanguage(lang.code);
+            mobileDrawer.classList.remove('open');
+            mobileMenuToggle.classList.remove('active');
+            mobileDrawer.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+          });
+          mobileLangChips.appendChild(chipBtn);
+        }
       });
 
       // Update Header Button Labels
@@ -3049,57 +3181,82 @@
       }
     }
 
-    // Toggle dropdown / mobile sheet
-    function openLangDropdown() {
+    // Modal & Dropdown Open/Close Handlers
+    function isMobileDevice() {
+      return window.innerWidth <= 768;
+    }
+
+    function openMobileModal() {
+      if (!mobileLangModal) return;
+      mobileLangModal.classList.add('open');
+      mobileLangModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileModal() {
+      if (!mobileLangModal) return;
+      mobileLangModal.classList.remove('open');
+      mobileLangModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function openDesktopDropdown() {
       if (!langDropdown || !langBtn) return;
       langDropdown.classList.add('open');
-      if (langBackdrop) langBackdrop.classList.add('open');
       langBtn.setAttribute('aria-expanded', 'true');
     }
 
-    function closeLangDropdown() {
+    function closeDesktopDropdown() {
       if (!langDropdown || !langBtn) return;
       langDropdown.classList.remove('open');
-      if (langBackdrop) langBackdrop.classList.remove('open');
       langBtn.setAttribute('aria-expanded', 'false');
     }
 
+    // Language Button Click Handler (Smart Mobile vs Desktop detection)
     if (langBtn) {
       langBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const isOpen = langDropdown.classList.contains('open');
-        if (isOpen) {
-          closeLangDropdown();
+        if (isMobileDevice()) {
+          closeDesktopDropdown();
+          openMobileModal();
         } else {
-          openLangDropdown();
+          closeMobileModal();
+          const isOpen = langDropdown && langDropdown.classList.contains('open');
+          if (isOpen) {
+            closeDesktopDropdown();
+          } else {
+            openDesktopDropdown();
+          }
         }
       });
     }
 
-    if (langCloseBtn) {
-      langCloseBtn.addEventListener('click', (e) => {
+    // Close Mobile Modal on Close Button or Backdrop Click
+    if (mobileLangCloseBtn) {
+      mobileLangCloseBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        closeLangDropdown();
+        closeMobileModal();
       });
     }
 
-    if (langBackdrop) {
-      langBackdrop.addEventListener('click', () => {
-        closeLangDropdown();
+    if (mobileLangBackdrop) {
+      mobileLangBackdrop.addEventListener('click', () => {
+        closeMobileModal();
       });
     }
 
-    // Close on click outside
+    // Close Desktop Dropdown on Outside Click
     document.addEventListener('click', (e) => {
       if (!e.target.closest('#langSelectorWrap')) {
-        closeLangDropdown();
+        closeDesktopDropdown();
       }
     });
 
-    // Close on Escape
+    // Close Both on Escape Key
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        closeLangDropdown();
+        closeDesktopDropdown();
+        closeMobileModal();
       }
     });
 
@@ -3133,7 +3290,8 @@
     function switchLanguage(langCode) {
       currentLanguage = langCode;
       localStorage.setItem('preferred_language', langCode);
-      closeLangDropdown();
+      closeDesktopDropdown();
+      closeMobileModal();
       renderLanguageOptions();
 
       const langObj = SUPPORTED_LANGS.find(l => l.code === langCode);
