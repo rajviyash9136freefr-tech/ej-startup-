@@ -1,0 +1,2488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOUR REAL ESTATE NAME | Exclusive Luxury Real Estate & Architectural Residences</title>
+  <meta name="description" content="Explore extraordinary properties, exceptional architecture, and distinguished living spaces curated for those who appreciate the finer things in life.">
+  <meta name="keywords" content="Luxury Real Estate, Architectural Residences, Prime Properties, Penthouse, Luxury Villas, YOUR REAL ESTATE NAME">
+  
+  <!-- Premium Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       STRICT TWO-COLOR SYSTEM & TOKENS
+       Primary: Obsidian Black (#171717)
+       Secondary: Ivory (#F3EFE6)
+       NO ACCENT COLORS, NO GRADIENTS, NO COLORFUL SHADOWS OR GLOWS
+       ========================================================================== */
+    :root {
+      --color-obsidian: #171717;
+      --color-ivory: #F3EFE6;
+      
+      /* Subtle alpha variations exclusively derived from the two colors */
+      --border-on-obsidian: rgba(243, 239, 230, 0.16);
+      --border-on-ivory: rgba(23, 23, 23, 0.14);
+      --subtle-on-obsidian: rgba(243, 239, 230, 0.72);
+      --subtle-on-ivory: rgba(23, 23, 23, 0.70);
+      --scrim-obsidian: rgba(23, 23, 23, 0.45);
+      --scrim-obsidian-deep: rgba(23, 23, 23, 0.75);
+
+      /* Typography */
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      
+      /* Layout & Spacing */
+      --container-max: 1360px;
+      --gutter: clamp(1.25rem, 4vw, 3.5rem);
+      --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* CSS Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      color: inherit;
+      background: none;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* Global Container */
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+
+    .container-wide {
+      width: 100%;
+      max-width: 1540px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--gutter);
+      padding-right: var(--gutter);
+    }
+
+    /* Editorial Micro Labels & Eyebrows */
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 1.25rem;
+    }
+
+    .eyebrow::after {
+      content: "";
+      display: inline-block;
+      width: 2rem;
+      height: 1px;
+      background-color: currentColor;
+      vertical-align: middle;
+      margin-left: 0.85rem;
+      opacity: 0.5;
+    }
+
+    /* Editorial Headings */
+    h1, h2, h3, h4, .serif-heading {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    .editorial-display {
+      font-size: clamp(2.5rem, 5.5vw, 5.25rem);
+      font-weight: 300;
+      line-height: 1.08;
+    }
+
+    .section-title {
+      font-size: clamp(2.1rem, 4vw, 3.75rem);
+      font-weight: 300;
+      line-height: 1.14;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: clamp(1rem, 1.25vw, 1.15rem);
+      font-weight: 300;
+      max-width: 620px;
+      line-height: 1.7;
+    }
+
+    /* Architectural Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1.05rem 2.25rem;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    /* Button Variants strictly adhering to #171717 and #F3EFE6 */
+    .btn-light-solid {
+      background-color: var(--color-ivory);
+      color: var(--color-obsidian);
+      border-color: var(--color-ivory);
+    }
+    .btn-light-solid:hover {
+      background-color: transparent;
+      color: var(--color-ivory);
+      border-color: var(--color-ivory);
+    }
+
+    .btn-light-outline {
+      background-color: transparent;
+      color: var(--color-ivory);
+      border-color: var(--color-ivory);
+    }
+    .btn-light-outline:hover {
+      background-color: var(--color-ivory);
+      color: var(--color-obsidian);
+    }
+
+    .btn-dark-solid {
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      border-color: var(--color-obsidian);
+    }
+    .btn-dark-solid:hover {
+      background-color: transparent;
+      color: var(--color-obsidian);
+      border-color: var(--color-obsidian);
+    }
+
+    .btn-dark-outline {
+      background-color: transparent;
+      color: var(--color-obsidian);
+      border-color: var(--color-obsidian);
+    }
+    .btn-dark-outline:hover {
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+    }
+
+    .text-link-minimal {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid currentColor;
+      transition: var(--transition-smooth);
+    }
+    .text-link-minimal:hover {
+      opacity: 0.7;
+      letter-spacing: 0.22em;
+    }
+
+    /* ==========================================================================
+       SECTION 01 — NAVIGATION
+       ========================================================================== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.75rem 0;
+      transition: padding 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
+      border-bottom: 1px solid rgba(243, 239, 230, 0.08);
+      background-color: rgba(23, 23, 23, 0.45);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .site-header.scrolled {
+      padding: 1.15rem 0;
+      background-color: rgba(23, 23, 23, 0.94);
+      border-bottom-color: var(--border-on-obsidian);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-wordmark {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-ivory);
+      white-space: nowrap;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 2.75rem;
+    }
+
+    .nav-item a {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-ivory);
+      opacity: 0.85;
+      position: relative;
+      padding: 0.35rem 0;
+    }
+
+    .nav-item a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background-color: var(--color-ivory);
+      transition: width 0.3s ease;
+    }
+
+    .nav-item a:hover {
+      opacity: 1;
+    }
+
+    .nav-item a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    /* Mobile Hamburger */
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border-on-obsidian);
+      background: transparent;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger-line {
+      width: 20px;
+      height: 1px;
+      background-color: var(--color-ivory);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .hamburger-line:first-child {
+      margin-bottom: 6px;
+    }
+
+    .mobile-menu-toggle.active .hamburger-line:first-child {
+      transform: translateY(3.5px) rotate(45deg);
+    }
+    .mobile-menu-toggle.active .hamburger-line:last-child {
+      transform: translateY(-3.5px) rotate(-45deg);
+    }
+
+    /* Mobile Menu Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--color-obsidian);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem var(--gutter);
+      transform: translateY(-100%);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      border-bottom: 1px solid var(--border-on-obsidian);
+    }
+
+    .mobile-drawer.open {
+      transform: translateY(0);
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .mobile-nav-list a {
+      font-family: var(--font-serif);
+      font-size: 2.25rem;
+      font-weight: 300;
+      color: var(--color-ivory);
+      letter-spacing: 0.05em;
+    }
+
+    .mobile-contact-meta {
+      font-size: 0.8rem;
+      color: var(--subtle-on-obsidian);
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      border-top: 1px solid var(--border-on-obsidian);
+      padding-top: 2rem;
+    }
+
+    /* ==========================================================================
+       SECTION 02 — HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: clamp(4rem, 8vh, 7rem);
+      padding-top: 8rem;
+      background-color: var(--color-obsidian);
+      overflow: hidden;
+    }
+
+    .hero-bg-media {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .hero-bg-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.03);
+      transition: transform 7s ease-out;
+    }
+
+    .hero-section:hover .hero-bg-media img {
+      transform: scale(1);
+    }
+
+    /* Scrim strictly in Obsidian Black with NO gradients */
+    .hero-scrim {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(23, 23, 23, 0.55);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 980px;
+    }
+
+    .hero-eyebrow {
+      color: var(--color-ivory);
+      opacity: 0.9;
+    }
+
+    .hero-headline {
+      color: var(--color-ivory);
+      font-size: clamp(2.75rem, 6.5vw, 6rem);
+      font-weight: 300;
+      line-height: 1.05;
+      margin-bottom: 1.75rem;
+      max-width: 900px;
+    }
+
+    .hero-supporting {
+      color: var(--color-ivory);
+      opacity: 0.88;
+      font-size: clamp(1.05rem, 1.4vw, 1.28rem);
+      font-weight: 300;
+      line-height: 1.65;
+      max-width: 640px;
+      margin-bottom: 2.75rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .hero-meta-bar {
+      position: absolute;
+      bottom: 1.75rem;
+      right: var(--gutter);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-ivory);
+      opacity: 0.7;
+    }
+
+    /* ==========================================================================
+       SECTION 03 — INTRODUCTION / BRAND STATEMENT (LIGHT SECTION)
+       ========================================================================== */
+    .intro-section {
+      background-color: var(--color-ivory);
+      color: var(--color-obsidian);
+      padding: clamp(5rem, 9vw, 9.5rem) 0;
+      position: relative;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: clamp(2.5rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .intro-media-wrap {
+      position: relative;
+    }
+
+    .intro-image-frame {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-on-ivory);
+      aspect-ratio: 4 / 3;
+    }
+
+    .intro-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .intro-image-frame:hover img {
+      transform: scale(1.03);
+    }
+
+    .intro-caption-tag {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.25rem;
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      padding: 0.5rem 1rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .intro-typography {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .intro-typography .eyebrow {
+      color: var(--color-obsidian);
+      opacity: 0.8;
+    }
+
+    .intro-heading {
+      color: var(--color-obsidian);
+      font-size: clamp(2.3rem, 4.2vw, 4.25rem);
+      font-weight: 300;
+      line-height: 1.12;
+      margin-bottom: 2rem;
+    }
+
+    .intro-paragraph {
+      color: var(--subtle-on-ivory);
+      font-size: clamp(1.05rem, 1.2vw, 1.2rem);
+      font-weight: 300;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    .intro-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      border-top: 1px solid var(--border-on-ivory);
+      padding-top: 2rem;
+      margin-top: 1rem;
+    }
+
+    .intro-pillar-item h4 {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      color: var(--color-obsidian);
+    }
+
+    .intro-pillar-item p {
+      font-size: 0.88rem;
+      color: var(--subtle-on-ivory);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       SECTION 04 — FEATURED PROPERTIES (DARK SECTION)
+       ========================================================================== */
+    .properties-section {
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      padding: clamp(5rem, 9vw, 9.5rem) 0;
+      border-top: 1px solid var(--border-on-obsidian);
+      position: relative;
+    }
+
+    .section-header-split {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: clamp(3rem, 5vw, 5rem);
+      border-bottom: 1px solid var(--border-on-obsidian);
+      padding-bottom: 2.25rem;
+    }
+
+    .properties-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(2rem, 4vw, 4.5rem);
+    }
+
+    .property-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border-on-obsidian);
+      background-color: rgba(23, 23, 23, 0.4);
+      transition: var(--transition-smooth);
+    }
+
+    .property-card:hover {
+      border-color: rgba(243, 239, 230, 0.38);
+    }
+
+    .property-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background-color: var(--color-obsidian);
+    }
+
+    .property-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .property-card:hover .property-media img {
+      transform: scale(1.04);
+    }
+
+    .property-badge {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.85rem;
+      border: 1px solid var(--border-on-obsidian);
+      z-index: 2;
+    }
+
+    .property-details {
+      padding: clamp(1.75rem, 2.5vw, 2.5rem);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .property-meta-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+    }
+
+    .property-location {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--subtle-on-obsidian);
+    }
+
+    .property-type-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--subtle-on-obsidian);
+    }
+
+    .property-name {
+      font-size: clamp(1.6rem, 2.2vw, 2.25rem);
+      font-weight: 400;
+      color: var(--color-ivory);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .property-specs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border-on-obsidian);
+      border-bottom: 1px solid var(--border-on-obsidian);
+      margin-bottom: 1.75rem;
+    }
+
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .spec-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--subtle-on-obsidian);
+      margin-bottom: 0.25rem;
+    }
+
+    .spec-value {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--color-ivory);
+    }
+
+    .property-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 0.5rem;
+    }
+
+    .property-price {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-ivory);
+    }
+
+    .property-view-btn {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-ivory);
+      background: none;
+      border-bottom: 1px solid var(--color-ivory);
+      padding-bottom: 0.2rem;
+      transition: var(--transition-smooth);
+    }
+    .property-view-btn:hover {
+      opacity: 0.7;
+      letter-spacing: 0.22em;
+    }
+
+    /* ==========================================================================
+       SECTION 05 — OUR EXPERTISE (LIGHT SECTION)
+       ========================================================================== */
+    .expertise-section {
+      background-color: var(--color-ivory);
+      color: var(--color-obsidian);
+      padding: clamp(5rem, 9vw, 9.5rem) 0;
+      border-top: 1px solid var(--border-on-obsidian);
+    }
+
+    .expertise-header {
+      max-width: 780px;
+      margin-bottom: clamp(3rem, 6vw, 5.5rem);
+    }
+
+    .services-editorial-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: 80px 1.25fr 1fr 180px;
+      gap: 2rem;
+      align-items: center;
+      padding: clamp(2rem, 3.5vw, 3rem) 0;
+      border-top: 1px solid var(--border-on-ivory);
+      transition: var(--transition-smooth);
+    }
+
+    .service-row:last-child {
+      border-bottom: 1px solid var(--border-on-ivory);
+    }
+
+    .service-row:hover {
+      padding-left: 1rem;
+      background-color: rgba(23, 23, 23, 0.02);
+    }
+
+    .service-number {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 300;
+      color: var(--color-obsidian);
+      opacity: 0.55;
+    }
+
+    .service-title {
+      font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+      font-weight: 300;
+      color: var(--color-obsidian);
+      line-height: 1.15;
+    }
+
+    .service-desc {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--subtle-on-ivory);
+    }
+
+    .service-action {
+      text-align: right;
+    }
+
+    /* ==========================================================================
+       SECTION 06 — THE LIFESTYLE / ARCHITECTURE SECTION (FULL-WIDTH DOMINANT)
+       ========================================================================== */
+    .architecture-section {
+      position: relative;
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      padding: clamp(6rem, 12vw, 12rem) 0;
+      overflow: hidden;
+    }
+
+    .arch-bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .arch-bg-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.02);
+      transition: transform 9s ease;
+    }
+
+    .architecture-section:hover .arch-bg-image img {
+      transform: scale(1.06);
+    }
+
+    .arch-scrim {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(23, 23, 23, 0.65);
+      z-index: 2;
+    }
+
+    .arch-content {
+      position: relative;
+      z-index: 3;
+      max-width: 1050px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .arch-headline {
+      font-size: clamp(2.5rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.08;
+      margin-bottom: 2rem;
+      color: var(--color-ivory);
+    }
+
+    .arch-subtext {
+      font-size: clamp(1rem, 1.35vw, 1.25rem);
+      font-weight: 300;
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto 3rem auto;
+      color: var(--color-ivory);
+      opacity: 0.9;
+    }
+
+    /* Curated Architectural Perspectives Showcase (incorporating high-res interior bedroom photography) */
+    .arch-detail-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: clamp(3rem, 6vw, 5rem);
+      text-align: left;
+    }
+
+    .arch-detail-card {
+      border: 1px solid var(--border-on-obsidian);
+      background-color: rgba(23, 23, 23, 0.65);
+      backdrop-filter: blur(8px);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .arch-detail-card-media {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border: 1px solid var(--border-on-obsidian);
+    }
+
+    .arch-detail-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .arch-detail-card:hover .arch-detail-card-media img {
+      transform: scale(1.03);
+    }
+
+    .arch-detail-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--color-ivory);
+    }
+
+    .arch-detail-card p {
+      font-size: 0.88rem;
+      color: var(--subtle-on-obsidian);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       SECTION 07 — WHY CHOOSE US (LIGHT SECTION)
+       ========================================================================== */
+    .why-section {
+      background-color: var(--color-ivory);
+      color: var(--color-obsidian);
+      padding: clamp(5rem, 9vw, 9.5rem) 0;
+      border-top: 1px solid var(--border-on-ivory);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      margin-top: clamp(2.5rem, 4.5vw, 4.5rem);
+    }
+
+    .why-card {
+      border: 1px solid var(--border-on-ivory);
+      padding: clamp(2rem, 3vw, 2.75rem) clamp(1.5rem, 2vw, 2rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 320px;
+      transition: var(--transition-smooth);
+      background-color: transparent;
+    }
+
+    .why-card:hover {
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      border-color: var(--color-obsidian);
+    }
+
+    .why-card:hover .why-index,
+    .why-card:hover .why-title,
+    .why-card:hover .why-desc {
+      color: var(--color-ivory);
+    }
+
+    .why-index {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--color-obsidian);
+      opacity: 0.45;
+      margin-bottom: 2rem;
+      transition: color 0.3s ease;
+    }
+
+    .why-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 1.8vw, 1.75rem);
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      color: var(--color-obsidian);
+      transition: color 0.3s ease;
+    }
+
+    .why-desc {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--subtle-on-ivory);
+      transition: color 0.3s ease;
+    }
+
+    /* ==========================================================================
+       SECTION 08 — PROPERTY ENQUIRY (DARK SECTION)
+       ========================================================================== */
+    .enquiry-section {
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      padding: clamp(5rem, 9vw, 9.5rem) 0;
+      border-top: 1px solid var(--border-on-obsidian);
+      position: relative;
+    }
+
+    .enquiry-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(3rem, 6vw, 6.5rem);
+    }
+
+    .enquiry-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .enquiry-form-card {
+      border: 1px solid var(--border-on-obsidian);
+      padding: clamp(2rem, 4vw, 3.5rem);
+      background-color: rgba(23, 23, 23, 0.45);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-label {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-ivory);
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background-color: transparent;
+      border: 1px solid var(--border-on-obsidian);
+      color: var(--color-ivory);
+      padding: 0.95rem 1.15rem;
+      font-size: 0.9rem;
+      font-family: var(--font-sans);
+      border-radius: 0;
+      transition: var(--transition-smooth);
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--color-ivory);
+      background-color: rgba(243, 239, 230, 0.03);
+    }
+
+    .form-select option {
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-error-msg {
+      font-size: 0.72rem;
+      color: var(--color-ivory);
+      opacity: 0.85;
+      display: none;
+      letter-spacing: 0.05em;
+    }
+
+    .form-group.has-error .form-input,
+    .form-group.has-error .form-select,
+    .form-group.has-error .form-textarea {
+      border-color: var(--color-ivory);
+      outline: 1px solid var(--color-ivory);
+    }
+
+    .form-group.has-error .form-error-msg {
+      display: block;
+    }
+
+    .form-status-box {
+      display: none;
+      padding: 1.5rem;
+      border: 1px solid var(--color-ivory);
+      margin-top: 1.5rem;
+      background-color: rgba(243, 239, 230, 0.05);
+    }
+
+    .form-status-box.show {
+      display: block;
+    }
+
+    .form-status-box h4 {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-ivory);
+    }
+
+    .form-status-box p {
+      font-size: 0.85rem;
+      color: var(--subtle-on-obsidian);
+      line-height: 1.6;
+    }
+
+    .form-status-box button {
+      margin-top: 1rem;
+    }
+
+    /* ==========================================================================
+       SECTION 09 — CONTACT SECTION (LIGHT SECTION)
+       ========================================================================== */
+    .contact-section {
+      background-color: var(--color-ivory);
+      color: var(--color-obsidian);
+      padding: clamp(5rem, 9vw, 9.5rem) 0;
+      border-top: 1px solid var(--border-on-obsidian);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: flex-start;
+    }
+
+    .contact-info-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--border-on-ivory);
+      margin-top: 2rem;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border-on-ivory);
+      align-items: baseline;
+    }
+
+    .contact-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--color-obsidian);
+    }
+
+    .contact-value {
+      font-size: 1rem;
+      color: var(--color-obsidian);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .contact-value a {
+      border-bottom: 1px solid rgba(23, 23, 23, 0.35);
+      padding-bottom: 0.15rem;
+    }
+
+    .contact-value a:hover {
+      border-bottom-color: var(--color-obsidian);
+      opacity: 0.7;
+    }
+
+    .contact-cta-card {
+      border: 1px solid var(--border-on-ivory);
+      padding: clamp(2.5rem, 4vw, 4rem);
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.75rem;
+    }
+
+    .contact-cta-card h3 {
+      font-size: clamp(2rem, 3vw, 2.75rem);
+      color: var(--color-obsidian);
+      line-height: 1.15;
+    }
+
+    .contact-cta-card p {
+      color: var(--subtle-on-ivory);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       SECTION 10 — FOOTER (DARK SECTION)
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      padding: clamp(4.5rem, 7vw, 7.5rem) 0 3rem 0;
+      border-top: 1px solid var(--border-on-obsidian);
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: clamp(2.5rem, 4vw, 4.5rem);
+      padding-bottom: clamp(3rem, 5vw, 4.5rem);
+      border-bottom: 1px solid var(--border-on-obsidian);
+    }
+
+    .footer-brand .brand-wordmark {
+      margin-bottom: 1.25rem;
+      display: inline-block;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: var(--subtle-on-obsidian);
+      line-height: 1.7;
+      max-width: 320px;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-ivory);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--subtle-on-obsidian);
+      transition: var(--transition-smooth);
+    }
+
+    .footer-links a:hover {
+      color: var(--color-ivory);
+      padding-left: 0.25rem;
+    }
+
+    .footer-meta-item {
+      font-size: 0.85rem;
+      color: var(--subtle-on-obsidian);
+      margin-bottom: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .footer-bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--subtle-on-obsidian);
+    }
+
+    /* ==========================================================================
+       MODAL: PROPERTY DETAILS & CURATED SPECIFICATIONS
+       Strictly in #171717 and #F3EFE6
+       ========================================================================== */
+    .property-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(23, 23, 23, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--gutter);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .property-modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .property-modal-box {
+      width: 100%;
+      max-width: 960px;
+      max-height: 90vh;
+      overflow-y: auto;
+      background-color: var(--color-obsidian);
+      border: 1px solid var(--border-on-obsidian);
+      color: var(--color-ivory);
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .property-modal-overlay.open .property-modal-box {
+      transform: translateY(0);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border-on-obsidian);
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 1.2rem;
+      transition: var(--transition-smooth);
+    }
+
+    .modal-close-btn:hover {
+      border-color: var(--color-ivory);
+    }
+
+    .modal-media-wrap {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      position: relative;
+      background-color: var(--color-obsidian);
+    }
+
+    .modal-media-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-body {
+      padding: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .modal-meta-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border-on-obsidian);
+      border-bottom: 1px solid var(--border-on-obsidian);
+      margin-bottom: 2rem;
+    }
+
+    .modal-description {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--subtle-on-obsidian);
+      margin-bottom: 2.5rem;
+    }
+
+    .modal-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Toast Notification */
+    .toast-notice {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: var(--color-ivory);
+      color: var(--color-obsidian);
+      border: 1px solid var(--color-obsidian);
+      padding: 1rem 1.5rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      z-index: 3000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      font-weight: 500;
+    }
+
+    .toast-notice.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .nav-menu {
+        display: none;
+      }
+      .mobile-menu-toggle {
+        display: flex;
+      }
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+      .properties-grid {
+        grid-template-columns: 1fr;
+      }
+      .service-row {
+        grid-template-columns: 60px 1fr;
+        row-gap: 1rem;
+      }
+      .service-desc {
+        grid-column: 2 / -1;
+      }
+      .service-action {
+        grid-column: 2 / -1;
+        text-align: left;
+      }
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .enquiry-layout {
+        grid-template-columns: 1fr;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-top-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .arch-detail-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      :root {
+        --gutter: 1.25rem;
+      }
+      .site-header {
+        padding: 1.25rem 0;
+      }
+      .brand-wordmark {
+        font-size: 1.1rem;
+      }
+      .nav-cta-wrap .btn {
+        display: none;
+      }
+      .hero-section {
+        padding-top: 7rem;
+        padding-bottom: 4rem;
+      }
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero-actions .btn {
+        width: 100%;
+      }
+      .hero-meta-bar {
+        display: none;
+      }
+      .intro-pillars {
+        grid-template-columns: 1fr;
+      }
+      .section-header-split {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+      .property-specs {
+        grid-template-columns: 1fr 1fr;
+      }
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+      .contact-row {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+      }
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .modal-specs-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .modal-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .modal-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SECTION 01 — NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container-wide nav-container">
+      <!-- Left: Main Wordmark Placeholder -->
+      <a href="#hero" class="brand-wordmark">YOUR REAL ESTATE NAME</a>
+
+      <!-- Center: Navigation Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#hero">Home</a></li>
+          <li class="nav-item"><a href="#properties">Properties</a></li>
+          <li class="nav-item"><a href="#about">About Us</a></li>
+          <li class="nav-item"><a href="#expertise">Our Services</a></li>
+          <li class="nav-item"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right: Primary CTA and Mobile Toggle -->
+      <div class="nav-cta-wrap">
+        <a href="#enquiry" class="btn btn-light-outline">ENQUIRE NOW</a>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <ul class="mobile-nav-list">
+      <li><a href="#hero" class="mobile-link">Home</a></li>
+      <li><a href="#properties" class="mobile-link">Properties</a></li>
+      <li><a href="#about" class="mobile-link">About Us</a></li>
+      <li><a href="#expertise" class="mobile-link">Our Services</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+    <a href="#enquiry" class="btn btn-light-solid mobile-link" style="margin-bottom: 2rem;">ENQUIRE NOW</a>
+    <div class="mobile-contact-meta">
+      <span>YOUR OFFICE ADDRESS</span>
+      <a href="tel:+10000000000">YOUR PHONE NUMBER</a>
+      <a href="mailto:contact@yourbusinessname.com">YOUR EMAIL ADDRESS</a>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SECTION 02 — HERO SECTION
+       ========================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-media">
+      <img src="ipB_ShpGo8Wiia7ct7mHW83kq3D1KZOYjgpHItuXMnGiP7lK7e1u4CorW5NkqyBs-PwoJtz5q8fWfPJ1XiRq5NyPgROStvmF9z8mRsyOaiKF9PqHj1-2EnkfEL10L9P2NgqQd-eLWZwB-OM9EdpXPhgBGPSDRzWbT4CMwTv2zDM2k10uUWTuDser6Z0n-92T.jpg" alt="Authentic architectural contemporary luxury villa estate at twilight" loading="eager">
+    </div>
+    <div class="hero-scrim"></div>
+
+    <div class="container hero-content">
+      <span class="eyebrow hero-eyebrow">EXCLUSIVE REAL ESTATE COLLECTION</span>
+      <h1 class="hero-headline">Discover a More Exceptional Way to Live.</h1>
+      <p class="hero-supporting">Explore extraordinary properties, exceptional architecture, and distinguished living spaces curated for those who appreciate the finer things in life.</p>
+      
+      <div class="hero-actions">
+        <a href="#properties" class="btn btn-light-solid">EXPLORE PROPERTIES</a>
+        <a href="#contact" class="btn btn-light-outline">CONTACT OUR TEAM</a>
+      </div>
+    </div>
+
+    <div class="hero-meta-bar">
+      <span>PORTFOLIO 2026</span>
+      <span>•</span>
+      <span>PRIVATE ENCLAVES</span>
+      <span>•</span>
+      <span>PRIME ARCHITECTURE</span>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 03 — INTRODUCTION / BRAND STATEMENT (LIGHT SECTION)
+       ========================================================================== -->
+  <section class="intro-section" id="about">
+    <div class="container intro-grid">
+      <!-- Left Column: Architectural Photography Frame -->
+      <div class="intro-media-wrap">
+        <div class="intro-image-frame">
+          <img src="KLlA5yo90NxESVGAJqC8aBn64eeexXiowKhUBRRWimD83FhzRE5eHLwec4hNvDy3WTLmYeCNokJxtkFwxpZHbUpjxZFfTRAWmxKv9dW5SIDSjnVmSB8tN2SbiR32gCEw2fq7cYJXJhikzkM1U_mZhoBnthWKxxLXLEDC75xB0Ek.jpg" alt="Architectural travertine stone entrance of a contemporary luxury villa" loading="lazy">
+          <div class="intro-caption-tag">ARCHITECTURAL STATEMENT</div>
+        </div>
+      </div>
+
+      <!-- Right Column: Refined Editorial Typography -->
+      <div class="intro-typography">
+        <span class="eyebrow">ABOUT OUR PRACTICE</span>
+        <h2 class="intro-heading">More Than Property. A Different Perspective on Living.</h2>
+        <p class="intro-paragraph">At YOUR REAL ESTATE NAME, we believe finding the right property is about more than location. It is about lifestyle, architecture, quality, and a place you are proud to call home.</p>
+        
+        <div class="intro-pillars">
+          <div class="intro-pillar-item">
+            <h4>Bespoke Curation</h4>
+            <p>Every residence in our portfolio undergoes stringent architectural and legal evaluation before private presentation.</p>
+          </div>
+          <div class="intro-pillar-item">
+            <h4>Discreet Advisory</h4>
+            <p>Unwavering privacy, rigorous market intelligence, and dedicated guidance tailored to discerning high-net-worth clients.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 04 — FEATURED PROPERTIES (DARK SECTION)
+       ========================================================================== -->
+  <section class="properties-section" id="properties">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header-split">
+        <div>
+          <span class="eyebrow">SELECTED RESIDENCES</span>
+          <h2 class="section-title">Exceptional Properties</h2>
+          <p class="section-subtitle">A carefully selected collection of distinguished properties.</p>
+        </div>
+        <div>
+          <a href="#enquiry" class="text-link-minimal">REQUEST PRIVATE CATALOGUE &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Properties Grid: 4 Premium Listings -->
+      <div class="properties-grid">
+
+        <!-- Property Listing 01 -->
+        <article class="property-card" data-property-id="prop-01">
+          <div class="property-media">
+            <span class="property-badge">PRIVATE LISTING</span>
+            <img src="Sa6_YfA8WwRN9WiVheLLk_Jq8OINkTFmoZ_ZsVCs6pZzoIMn7DS93fpWTBnI0S7Vz5Xq6-mXw1Q_rfzyi1Fl5i50XL3A1wyZyuQnFB1_4fu9eWEWRujP8ZGnQtULqvTIJc3tPu7KTBiFrEDmLc54oEj6ip-r4KIzfFcFZHRExP5Bd0J707NZhx1OCxNpMr2u.jpg" alt="The Skyline Penthouse Residence terrace and private infinity pool" loading="lazy">
+          </div>
+          <div class="property-details">
+            <div class="property-meta-top">
+              <span class="property-location">LOCATION, CITY</span>
+              <span class="property-type-tag">PROPERTY TYPE</span>
+            </div>
+            <h3 class="property-name">PROPERTY NAME 01</h3>
+            <div class="property-specs">
+              <div class="spec-item">
+                <span class="spec-label">BEDROOMS</span>
+                <span class="spec-value">4 BEDROOMS</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">BATHROOMS</span>
+                <span class="spec-value">5 BATHROOMS</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">AREA (SQ. FT.)</span>
+                <span class="spec-value">6,450 SQ. FT.</span>
+              </div>
+            </div>
+            <div class="property-footer">
+              <span class="property-price">PRICE: PRICE ON REQUEST</span>
+              <button class="property-view-btn" onclick="openPropertyModal('prop-01')">VIEW PROPERTY &rarr;</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Property Listing 02 -->
+        <article class="property-card" data-property-id="prop-02">
+          <div class="property-media">
+            <span class="property-badge">CONTEMPORARY MASTERPIECE</span>
+            <img src="udbi_kwIGPOMaFEMSU3SnRnoU-z4PaFV8PgWKtvnR5ya0qAsIjktd9BaDmpiljFWGT_oK2I-Y6BAVZEVlP8iTcgMjbNDZV0oMNHDgSTzURH804nR6ACcg0fnFwnjRxuZJCkDBpm3tdxZA9buRZoC6BcI-40TWKbhDobz1UYSNhAzft1dwXMHUTzZPhyEbgqs.jpg" alt="Modernist minimalist single-level villa with private reflective pool" loading="lazy">
+          </div>
+          <div class="property-details">
+            <div class="property-meta-top">
+              <span class="property-location">LOCATION, CITY</span>
+              <span class="property-type-tag">PROPERTY TYPE</span>
+            </div>
+            <h3 class="property-name">PROPERTY NAME 02</h3>
+            <div class="property-specs">
+              <div class="spec-item">
+                <span class="spec-label">BEDROOMS</span>
+                <span class="spec-value">5 BEDROOMS</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">BATHROOMS</span>
+                <span class="spec-value">6 BATHROOMS</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">AREA (SQ. FT.)</span>
+                <span class="spec-value">8,200 SQ. FT.</span>
+              </div>
+            </div>
+            <div class="property-footer">
+              <span class="property-price">PRICE: PRICE ON REQUEST</span>
+              <button class="property-view-btn" onclick="openPropertyModal('prop-02')">VIEW PROPERTY &rarr;</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Property Listing 03 -->
+        <article class="property-card" data-property-id="prop-03">
+          <div class="property-media">
+            <span class="property-badge">EXCLUSIVE HORIZON</span>
+            <img src="GIt7zTxiE-27Uh3GlBso-Uydb3FyRIrlnnDPulWjDsvoXTRZNY9ebvUJ--o7zLA9uIVOKm1zxbAwLLU5Z4fLoYxcjoO_oEqsgN3gUhtkOKNDjbUKbntmDSh0vu5avgIv71NK9jarIVG77vTNWG7c9x0GZWDM8JP5ydl4kZlKbLZVgboGOfv2U2EQH_f9VK1W.jpg" alt="Multi-level architectural hillside villa with swimming pool and mountain views" loading="lazy">
+          </div>
+          <div class="property-details">
+            <div class="property-meta-top">
+              <span class="property-location">LOCATION, CITY</span>
+              <span class="property-type-tag">PROPERTY TYPE</span>
+            </div>
+            <h3 class="property-name">PROPERTY NAME 03</h3>
+            <div class="property-specs">
+              <div class="spec-item">
+                <span class="spec-label">BEDROOMS</span>
+                <span class="spec-value">6 BEDROOMS</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">BATHROOMS</span>
+                <span class="spec-value">7 BATHROOMS</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">AREA (SQ. FT.)</span>
+                <span class="spec-value">9,850 SQ. FT.</span>
+              </div>
+            </div>
+            <div class="property-footer">
+              <span class="property-price">PRICE: PRICE ON REQUEST</span>
+              <button class="property-view-btn" onclick="openPropertyModal('prop-03')">VIEW PROPERTY &rarr;</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Property Listing 04 -->
+        <article class="property-card" data-property-id="prop-04">
+          <div class="property-media">
+            <span class="property-badge">ARCHITECTURAL PAVILION</span>
+            <img src="5GnFpf5y52H5OzGN70wbvadO_-U9h-R46C7e_iPL_FI9LOf991_pw66Nc4LvAW7RenELnh70BSUSC7UuuFmkzAm8i7KsJA2OIQ3tVUycmFH_OPyQxWkzNVSh8m8OlDCwv37jPJWlIyK0LuIFK8Yfuzg-xB8o5DkmlZ1RE-jd0Tw.jpg" alt="Pure white minimalist villa with reflective infinity pool under blue skies" loading="lazy">
+          </div>
+          <div class="property-details">
+            <div class="property-meta-top">
+              <span class="property-location">LOCATION, CITY</span>
+              <span class="property-type-tag">PROPERTY TYPE</span>
+            </div>
+            <h3 class="property-name">PROPERTY NAME 04</h3>
+            <div class="property-specs">
+              <div class="spec-item">
+                <span class="spec-label">BEDROOMS</span>
+                <span class="spec-value">5 BEDROOMS</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">BATHROOMS</span>
+                <span class="spec-value">5 BATHROOMS</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">AREA (SQ. FT.)</span>
+                <span class="spec-value">7,600 SQ. FT.</span>
+              </div>
+            </div>
+            <div class="property-footer">
+              <span class="property-price">PRICE: PRICE ON REQUEST</span>
+              <button class="property-view-btn" onclick="openPropertyModal('prop-04')">VIEW PROPERTY &rarr;</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 05 — OUR EXPERTISE (LIGHT SECTION)
+       ========================================================================== -->
+  <section class="expertise-section" id="expertise">
+    <div class="container">
+      <div class="expertise-header">
+        <span class="eyebrow">PRACTICE AREAS</span>
+        <h2 class="section-title">Property Expertise. Personal Attention.</h2>
+        <p class="section-subtitle">A refined advisory practice structured around bespoke acquisitions, discreet divestments, and high-value property portfolios.</p>
+      </div>
+
+      <div class="services-editorial-list">
+        <!-- Service 01 -->
+        <div class="service-row">
+          <div class="service-number">01</div>
+          <h3 class="service-title">Luxury Residential Properties</h3>
+          <p class="service-desc">Representation for extraordinary single-family estates, modern villas, and full-floor penthouses. We provide access to confidential off-market inventory.</p>
+          <div class="service-action">
+            <a href="#enquiry" class="btn btn-dark-outline">ENQUIRE</a>
+          </div>
+        </div>
+
+        <!-- Service 02 -->
+        <div class="service-row">
+          <div class="service-number">02</div>
+          <h3 class="service-title">Premium Property Investments</h3>
+          <p class="service-desc">Strategic capital placement into premier residential developments, trophy assets, and wealth-preserving real estate portfolios with long-term appreciation.</p>
+          <div class="service-action">
+            <a href="#enquiry" class="btn btn-dark-outline">ENQUIRE</a>
+          </div>
+        </div>
+
+        <!-- Service 03 -->
+        <div class="service-row">
+          <div class="service-number">03</div>
+          <h3 class="service-title">Buying &amp; Selling Advisory</h3>
+          <p class="service-desc">Comprehensive transaction management, institutional-grade valuation, discreet marketing campaigns, and seamless legal and financial negotiation.</p>
+          <div class="service-action">
+            <a href="#enquiry" class="btn btn-dark-outline">ENQUIRE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 06 — THE LIFESTYLE / ARCHITECTURE SECTION (FULL-WIDTH DOMINANT)
+       ========================================================================== -->
+  <section class="architecture-section" id="architecture">
+    <div class="arch-bg-image">
+      <img src="WknAJJdrUsdRIFEuHCN8vcGCQWUGTfeJYkAsaOYS0fBjUkmKI9raQye2lbIaUISNorZ8puKPYgP7_NALmU9KuPCL56VtWqqOgGbLjjCjZioCMEU756G4rEcAPL3ormEE8vHPlj_Lwdymtn0TalNH8ftRtbFLPXih1yNJTh67sLBy0f5l-3PkjG-j1EGR0vVD.jpg" alt="Double-height luxury living room with natural stone fireplace and floor-to-ceiling glass" loading="lazy">
+    </div>
+    <div class="arch-scrim"></div>
+
+    <div class="container arch-content">
+      <span class="eyebrow" style="color: var(--color-ivory);">EDITORIAL PERSPECTIVE</span>
+      <h2 class="arch-headline">Where Architecture Meets Exceptional Living.</h2>
+      <p class="arch-subtext">Every home is a living gallery of light, volume, and material truth. We curate residences that transcend conventional spaces to create enduring private sanctuaries.</p>
+      
+      <a href="#properties" class="btn btn-light-solid">VIEW CURATED SPACES</a>
+
+      <!-- Architectural perspectives showcasing bespoke living and bedroom suite -->
+      <div class="arch-detail-strip">
+        <div class="arch-detail-card">
+          <div class="arch-detail-card-media">
+            <img src="D6zKyFJl9CR38KKxDFjNeC85T6kJLGZoPohZaZoba8iL5Ph-t8fl2m14naRG3dA0s737PtdfXP8dLAm5XHzXPhi4RdDFr8s1lZ2HHrtqM0OwokUF0pOds0dK46Af_hWVw_9G7S6PfsyOJiSf__BVAJlulz09rYQwwRKDleDZe8MSOX6s6krxqTE50dZYr2Om.jpg" alt="Master bedroom suite with fluted wood walls and garden views" loading="lazy">
+          </div>
+          <h4>Private Suite Sanctuaries</h4>
+          <p>Seamless spatial flow uniting natural wood textures, floor-to-ceiling glass, and tranquil landscaped outdoor courtyards.</p>
+        </div>
+
+        <div class="arch-detail-card">
+          <div class="arch-detail-card-media">
+            <img src="KLlA5yo90NxESVGAJqC8aBn64eeexXiowKhUBRRWimD83FhzRE5eHLwec4hNvDy3WTLmYeCNokJxtkFwxpZHbUpjxZFfTRAWmxKv9dW5SIDSjnVmSB8tN2SbiR32gCEw2fq7cYJXJhikzkM1U_mZhoBnthWKxxLXLEDC75xB0Ek.jpg" alt="Sculptural travertine facade and stepped arrival terrace" loading="lazy">
+          </div>
+          <h4>Architectural Arrival</h4>
+          <p>Carefully balanced stone massing, tactile materials, and organic transitions between structural precision and nature.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 07 — WHY CHOOSE US (LIGHT SECTION)
+       ========================================================================== -->
+  <section class="why-section" id="why-us">
+    <div class="container">
+      <div>
+        <span class="eyebrow">OUR COMMITMENT</span>
+        <h2 class="section-title">A More Refined Real Estate Experience.</h2>
+        <p class="section-subtitle">We believe true luxury lies in simplicity, uncompromising discretion, and an unhurried, meticulous advisory process.</p>
+      </div>
+
+      <div class="why-grid">
+        <!-- Item 01 -->
+        <div class="why-card">
+          <div>
+            <div class="why-index">01</div>
+            <h3 class="why-title">Personalized Property Guidance</h3>
+          </div>
+          <p class="why-desc">Tailored property representation led directly by senior advisors who take the time to understand your personal lifestyle, architectural taste, and long-term objectives.</p>
+        </div>
+
+        <!-- Item 02 -->
+        <div class="why-card">
+          <div>
+            <div class="why-index">02</div>
+            <h3 class="why-title">Carefully Selected Properties</h3>
+          </div>
+          <p class="why-desc">We strictly filter out mediocre listings. Only homes that satisfy rigorous criteria regarding spatial integrity, light quality, construction standard, and location are accepted.</p>
+        </div>
+
+        <!-- Item 03 -->
+        <div class="why-card">
+          <div>
+            <div class="why-index">03</div>
+            <h3 class="why-title">Professional Market Knowledge</h3>
+          </div>
+          <p class="why-desc">Deep transactional insight, micro-market pricing data, and historical asset tracking to ensure every negotiation is supported by sound financial fundamentals.</p>
+        </div>
+
+        <!-- Item 04 -->
+        <div class="why-card">
+          <div>
+            <div class="why-index">04</div>
+            <h3 class="why-title">Dedicated Client Experience</h3>
+          </div>
+          <p class="why-desc">An effortless, discreet relationship from initial private consultation to final keys. We coordinate viewings, legal due diligence, and bespoke handover arrangements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 08 — PROPERTY ENQUIRY (DARK SECTION)
+       ========================================================================== -->
+  <section class="enquiry-section" id="enquiry">
+    <div class="container enquiry-layout">
+      <!-- Left: Context & Narrative -->
+      <div class="enquiry-info">
+        <span class="eyebrow">PRIVATE ENQUIRY</span>
+        <h2 class="section-title">Find Your Next Exceptional Property.</h2>
+        <p class="section-subtitle" style="margin-bottom: 2rem;">Tell us what you are looking for. Our team would be delighted to assist you with bespoke property search and confidential off-market inventory.</p>
+
+        <div style="border-top: 1px solid var(--border-on-obsidian); padding-top: 2rem; margin-top: auto;">
+          <p style="font-size: 0.85rem; color: var(--subtle-on-obsidian); line-height: 1.7; margin-bottom: 1.5rem;">
+            All client communications and property searches are held in absolute confidentiality. Direct consultations can also be conducted via private telephone or encrypted messaging.
+          </p>
+          <a href="#contact" class="text-link-minimal">VIEW DIRECT CONTACT DETAILS &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Right: Front-End Validated Enquiry Form -->
+      <div class="enquiry-form-card">
+        <form id="enquiryForm" novalidate>
+          <div class="form-grid">
+            <!-- Full Name -->
+            <div class="form-group" id="group-fullName">
+              <label for="fullName" class="form-label">Full Name *</label>
+              <input type="text" id="fullName" name="fullName" class="form-input" placeholder="e.g. Eleanor Vance" required>
+              <span class="form-error-msg">Please enter your full name.</span>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group" id="group-email">
+              <label for="email" class="form-label">Email Address *</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="e.g. name@domain.com" required>
+              <span class="form-error-msg">Please enter a valid email address.</span>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group" id="group-phone">
+              <label for="phone" class="form-label">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="e.g. +1 (555) 000-0000" required>
+              <span class="form-error-msg">Please enter a valid phone number.</span>
+            </div>
+
+            <!-- Interested Property -->
+            <div class="form-group" id="group-interestedProperty">
+              <label for="interestedProperty" class="form-label">Interested Property</label>
+              <select id="interestedProperty" name="interestedProperty" class="form-select">
+                <option value="">Select a property or general enquiry</option>
+                <option value="PROPERTY NAME 01">PROPERTY NAME 01 (Skyline Penthouse)</option>
+                <option value="PROPERTY NAME 02">PROPERTY NAME 02 (Modernist Pavilion)</option>
+                <option value="PROPERTY NAME 03">PROPERTY NAME 03 (Hillside Horizon Estate)</option>
+                <option value="PROPERTY NAME 04">PROPERTY NAME 04 (Pure White Sanctuary)</option>
+                <option value="General Portfolio Consultation">General Portfolio Consultation</option>
+              </select>
+            </div>
+
+            <!-- Preferred Location -->
+            <div class="form-group" id="group-location">
+              <label for="location" class="form-label">Preferred Location</label>
+              <input type="text" id="location" name="location" class="form-input" placeholder="e.g. Coastal Waterfront, Prime Enclave">
+            </div>
+
+            <!-- Approximate Budget -->
+            <div class="form-group" id="group-budget">
+              <label for="budget" class="form-label">Approximate Budget</label>
+              <select id="budget" name="budget" class="form-select">
+                <option value="">Select an investment bracket</option>
+                <option value="5M - 10M">$5,000,000 – $10,000,000</option>
+                <option value="10M - 25M">$10,000,000 – $25,000,000</option>
+                <option value="25M+">$25,000,000+</option>
+                <option value="Bespoke Allocation">Bespoke Capital Allocation</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group full-width" id="group-message">
+              <label for="message" class="form-label">Message *</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Detail your timing, specific architectural preferences, or requirements..." required></textarea>
+              <span class="form-error-msg">Please write a short message regarding your requirements.</span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group full-width" style="margin-top: 0.5rem;">
+              <button type="submit" class="btn btn-light-solid" id="submitEnquiryBtn" style="width: 100%;">SUBMIT ENQUIRY</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Working Submission Success State -->
+        <div class="form-status-box" id="formStatusBox">
+          <h4>Thank You. Your Enquiry Has Been Received.</h4>
+          <p>Our senior property director will review your requirements and reach out within 24 business hours to arrange a confidential discussion.</p>
+          <button type="button" class="btn btn-light-outline" onclick="resetEnquiryForm()">SUBMIT ANOTHER ENQUIRY</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 09 — CONTACT SECTION (LIGHT SECTION)
+       ========================================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-grid">
+      <!-- Left Column: Contact Details with Editable Placeholders -->
+      <div>
+        <span class="eyebrow">GET IN TOUCH</span>
+        <h2 class="section-title">Let's Start a Conversation.</h2>
+        <p class="section-subtitle">Whether you are acquiring a signature home or considering the discreet sale of a prime property, we welcome your contact.</p>
+
+        <div class="contact-info-list">
+          <div class="contact-row">
+            <span class="contact-label">BUSINESS</span>
+            <span class="contact-value">YOUR BUSINESS NAME</span>
+          </div>
+
+          <div class="contact-row">
+            <span class="contact-label">COMPANY</span>
+            <span class="contact-value">YOUR COMPANY NAME</span>
+          </div>
+
+          <div class="contact-row">
+            <span class="contact-label">ADDRESS</span>
+            <span class="contact-value">YOUR OFFICE ADDRESS</span>
+          </div>
+
+          <div class="contact-row">
+            <span class="contact-label">TELEPHONE</span>
+            <span class="contact-value">
+              <a href="tel:+10000000000" title="Click to call">YOUR PHONE NUMBER</a>
+            </span>
+          </div>
+
+          <div class="contact-row">
+            <span class="contact-label">ELECTRONIC MAIL</span>
+            <span class="contact-value">
+              <a href="mailto:contact@yourbusinessname.com" title="Click to email">YOUR EMAIL ADDRESS</a>
+            </span>
+          </div>
+
+          <div class="contact-row">
+            <span class="contact-label">WHATSAPP</span>
+            <span class="contact-value">
+              <a href="https://wa.me/10000000000?text=Hello%2C%20I%20am%20interested%20in%20discussing%20luxury%20properties." target="_blank" rel="noopener noreferrer" title="Click to message on WhatsApp">
+                YOUR WHATSAPP NUMBER
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Prominent Enquiry CTA Card -->
+      <div class="contact-cta-card">
+        <span class="eyebrow">CONFIDENTIAL APPOINTMENTS</span>
+        <h3>Schedule a Private Consultation</h3>
+        <p>We host private appointments in our gallery office or can coordinate video conferences at your convenience worldwide.</p>
+        <div>
+          <a href="#enquiry" class="btn btn-dark-solid">SUBMIT FORM ENQUIRY</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 10 — FOOTER (DARK SECTION)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Col 1: Brand & Wordmark -->
+        <div class="footer-brand">
+          <a href="#hero" class="brand-wordmark">YOUR REAL ESTATE NAME</a>
+          <p>A distinguished real estate advisory dedicated to rare architectural properties, extraordinary living spaces, and bespoke client representation.</p>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div>
+          <div class="footer-col-title">NAVIGATION</div>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#properties">Properties</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#expertise">Our Services</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Practice Areas -->
+        <div>
+          <div class="footer-col-title">EXPERTISE</div>
+          <ul class="footer-links">
+            <li><a href="#expertise">Luxury Residences</a></li>
+            <li><a href="#expertise">Prime Investments</a></li>
+            <li><a href="#expertise">Private Advisory</a></li>
+            <li><a href="#expertise">Asset Divestment</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Meta Placeholders -->
+        <div>
+          <div class="footer-col-title">GLOBAL PRESENCE</div>
+          <div class="footer-meta-item">YOUR COMPANY NAME</div>
+          <div class="footer-meta-item">YOUR OFFICE ADDRESS</div>
+          <div class="footer-meta-item">
+            <a href="tel:+10000000000">YOUR PHONE NUMBER</a>
+          </div>
+          <div class="footer-meta-item">
+            <a href="mailto:contact@yourbusinessname.com">YOUR EMAIL ADDRESS</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>&copy; 2026 YOUR BUSINESS NAME. ALL RIGHTS RESERVED.</div>
+        <div>DEMO LUXURY REAL ESTATE PRESENTATION</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       INTERACTIVE PROPERTY MODAL: VIEW PROPERTY DETAILS
+       ========================================================================== -->
+  <div class="property-modal-overlay" id="propertyModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="property-modal-box">
+      <button class="modal-close-btn" onclick="closePropertyModal()" aria-label="Close Property Details">&times;</button>
+      
+      <div class="modal-media-wrap">
+        <img id="modalPropertyImg" src="" alt="Property View">
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-meta-header">
+          <span class="eyebrow" id="modalPropertyType">PROPERTY TYPE</span>
+          <span class="property-location" id="modalPropertyLocation">LOCATION, CITY</span>
+        </div>
+        
+        <h2 class="modal-title" id="modalPropertyTitle">PROPERTY NAME 01</h2>
+
+        <div class="modal-specs-grid">
+          <div class="spec-item">
+            <span class="spec-label">BEDROOMS</span>
+            <span class="spec-value" id="modalBedrooms">-</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">BATHROOMS</span>
+            <span class="spec-value" id="modalBathrooms">-</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">AREA</span>
+            <span class="spec-value" id="modalArea">-</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">OFFERING</span>
+            <span class="spec-value" id="modalPrice">PRICE ON REQUEST</span>
+          </div>
+        </div>
+
+        <p class="modal-description" id="modalPropertyDesc">
+          A truly distinguished residence showcasing peerless architectural harmony, private outdoor expanses, and world-class craftsmanship. Designed for private entertaining and tranquil living.
+        </p>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-light-solid" id="modalEnquireBtn" onclick="selectPropertyAndScroll()">ENQUIRE ABOUT THIS PROPERTY</button>
+          <button type="button" class="btn btn-light-outline" onclick="closePropertyModal()">CLOSE PREVIEW</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification element -->
+  <div class="toast-notice" id="toastNotice">Enquiry Form Ready</div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT INTERACTIONS & FORM LOGIC
+       ========================================================================== -->
+  <script>
+    // Property Data Store for Interactive Modal
+    const propertiesData = {
+      'prop-01': {
+        name: 'PROPERTY NAME 01',
+        type: 'PROPERTY TYPE — SKYLINE PENTHOUSE',
+        location: 'LOCATION, CITY',
+        bedrooms: '4 BEDROOMS',
+        bathrooms: '5 BATHROOMS',
+        area: '6,450 SQ. FT.',
+        price: 'PRICE ON REQUEST',
+        image: 'Sa6_YfA8WwRN9WiVheLLk_Jq8OINkTFmoZ_ZsVCs6pZzoIMn7DS93fpWTBnI0S7Vz5Xq6-mXw1Q_rfzyi1Fl5i50XL3A1wyZyuQnFB1_4fu9eWEWRujP8ZGnQtULqvTIJc3tPu7KTBiFrEDmLc54oEj6ip-r4KIzfFcFZHRExP5Bd0J707NZhx1OCxNpMr2u.jpg',
+        description: 'Occupying an elevated vantage above the metropolitan horizon, this sky residence features an expansive wraparound entertaining terrace, private heated perimeter pool, and seamless indoor-outdoor living framed by floor-to-ceiling acoustic glass.'
+      },
+      'prop-02': {
+        name: 'PROPERTY NAME 02',
+        type: 'PROPERTY TYPE — MODERNIST PAVILION',
+        location: 'LOCATION, CITY',
+        bedrooms: '5 BEDROOMS',
+        bathrooms: '6 BATHROOMS',
+        area: '8,200 SQ. FT.',
+        price: 'PRICE ON REQUEST',
+        image: 'udbi_kwIGPOMaFEMSU3SnRnoU-z4PaFV8PgWKtvnR5ya0qAsIjktd9BaDmpiljFWGT_oK2I-Y6BAVZEVlP8iTcgMjbNDZV0oMNHDgSTzURH804nR6ACcg0fnFwnjRxuZJCkDBpm3tdxZA9buRZoC6BcI-40TWKbhDobz1UYSNhAzft1dwXMHUTzZPhyEbgqs.jpg',
+        description: 'A serene study in horizontal modernist architecture. Clean concrete massing, floating perimeter steps, reflective water features, and expansive open-plan living chambers that blend effortlessly into coastal botanical landscaping.'
+      },
+      'prop-03': {
+        name: 'PROPERTY NAME 03',
+        type: 'PROPERTY TYPE — HILLSIDE HORIZON ESTATE',
+        location: 'LOCATION, CITY',
+        bedrooms: '6 BEDROOMS',
+        bathrooms: '7 BATHROOMS',
+        area: '9,850 SQ. FT.',
+        price: 'PRICE ON REQUEST',
+        image: 'GIt7zTxiE-27Uh3GlBso-Uydb3FyRIrlnnDPulWjDsvoXTRZNY9ebvUJ--o7zLA9uIVOKm1zxbAwLLU5Z4fLoYxcjoO_oEqsgN3gUhtkOKNDjbUKbntmDSh0vu5avgIv71NK9jarIVG77vTNWG7c9x0GZWDM8JP5ydl4kZlKbLZVgboGOfv2U2EQH_f9VK1W.jpg',
+        description: 'Commanding multi-tier architectural villa elevated upon a panoramic hillside. Boasting an expansive sun terrace, deep infinity swimming basin, private guest pavilions, and dramatic floor-to-ceiling glass galleries welcoming natural daylight.'
+      },
+      'prop-04': {
+        name: 'PROPERTY NAME 04',
+        type: 'PROPERTY TYPE — PURE WHITE SANCTUARY',
+        location: 'LOCATION, CITY',
+        bedrooms: '5 BEDROOMS',
+        bathrooms: '5 BATHROOMS',
+        area: '7,600 SQ. FT.',
+        price: 'PRICE ON REQUEST',
+        image: '5GnFpf5y52H5OzGN70wbvadO_-U9h-R46C7e_iPL_FI9LOf991_pw66Nc4LvAW7RenELnh70BSUSC7UuuFmkzAm8i7KsJA2OIQ3tVUycmFH_OPyQxWkzNVSh8m8OlDCwv37jPJWlIyK0LuIFK8Yfuzg-xB8o5DkmlZ1RE-jd0Tw.jpg',
+        description: 'Pristine architectural geometry framing an azure reflection pool. Characterized by sculptural white cantilevers, minimalist structural lines, and secluded sun-drenched lounge decks overlooking private coastal vistas.'
+      }
+    };
+
+    let activeModalProperty = null;
+
+    // Header scroll appearance
+    const siteHeader = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Navigation Drawer Toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    mobileMenuToggle.addEventListener('click', () => {
+      const isOpen = mobileDrawer.classList.contains('open');
+      if (isOpen) {
+        mobileDrawer.classList.remove('open');
+        mobileMenuToggle.classList.remove('active');
+        mobileDrawer.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      } else {
+        mobileDrawer.classList.add('open');
+        mobileMenuToggle.classList.add('active');
+        mobileDrawer.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileDrawer.classList.remove('open');
+        mobileMenuToggle.classList.remove('active');
+        mobileDrawer.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Property Modal Logic
+    const propertyModal = document.getElementById('propertyModal');
+    const modalPropertyImg = document.getElementById('modalPropertyImg');
+    const modalPropertyType = document.getElementById('modalPropertyType');
+    const modalPropertyLocation = document.getElementById('modalPropertyLocation');
+    const modalPropertyTitle = document.getElementById('modalPropertyTitle');
+    const modalBedrooms = document.getElementById('modalBedrooms');
+    const modalBathrooms = document.getElementById('modalBathrooms');
+    const modalArea = document.getElementById('modalArea');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalPropertyDesc = document.getElementById('modalPropertyDesc');
+
+    function openPropertyModal(propId) {
+      const data = propertiesData[propId];
+      if (!data) return;
+
+      activeModalProperty = data.name;
+      modalPropertyImg.src = data.image;
+      modalPropertyImg.alt = data.name;
+      modalPropertyType.textContent = data.type;
+      modalPropertyLocation.textContent = data.location;
+      modalPropertyTitle.textContent = data.name;
+      modalBedrooms.textContent = data.bedrooms;
+      modalBathrooms.textContent = data.bathrooms;
+      modalArea.textContent = data.area;
+      modalPrice.textContent = data.price;
+      modalPropertyDesc.textContent = data.description;
+
+      propertyModal.classList.add('open');
+      propertyModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePropertyModal() {
+      propertyModal.classList.remove('open');
+      propertyModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      activeModalProperty = null;
+    }
+
+    // Close on overlay click
+    propertyModal.addEventListener('click', (e) => {
+      if (e.target === propertyModal) {
+        closePropertyModal();
+      }
+    });
+
+    // Close on ESC key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && propertyModal.classList.contains('open')) {
+        closePropertyModal();
+      }
+    });
+
+    // Select property and smoothly scroll to enquiry section
+    function selectPropertyAndScroll() {
+      const targetProperty = activeModalProperty;
+      closePropertyModal();
+      
+      const selectElement = document.getElementById('interestedProperty');
+      if (selectElement && targetProperty) {
+        selectElement.value = targetProperty;
+      }
+      
+      const enquirySection = document.getElementById('enquiry');
+      if (enquirySection) {
+        enquirySection.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          document.getElementById('fullName').focus();
+        }, 600);
+      }
+    }
+
+    // Front-End Form Validation & Working Submission State
+    const enquiryForm = document.getElementById('enquiryForm');
+    const formStatusBox = document.getElementById('formStatusBox');
+
+    function showToast(message) {
+      const toast = document.getElementById('toastNotice');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+
+    function validateField(groupId, inputId, validatorFn) {
+      const group = document.getElementById(groupId);
+      const input = document.getElementById(inputId);
+      const isValid = validatorFn(input.value.trim());
+
+      if (!isValid) {
+        group.classList.add('has-error');
+        return false;
+      } else {
+        group.classList.remove('has-error');
+        return true;
+      }
+    }
+
+    enquiryForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const isNameValid = validateField('group-fullName', 'fullName', val => val.length >= 2);
+      const isEmailValid = validateField('group-email', 'email', val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val));
+      const isPhoneValid = validateField('group-phone', 'phone', val => val.length >= 7);
+      const isMsgValid = validateField('group-message', 'message', val => val.length >= 5);
+
+      if (isNameValid && isEmailValid && isPhoneValid && isMsgValid) {
+        // Collect form data payload for future CRM / backend integration
+        const formData = {
+          fullName: document.getElementById('fullName').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          interestedProperty: document.getElementById('interestedProperty').value,
+          location: document.getElementById('location').value.trim(),
+          budget: document.getElementById('budget').value,
+          message: document.getElementById('message').value.trim(),
+          submittedAt: new Date().toISOString()
+        };
+
+        console.info('[YOUR REAL ESTATE NAME] Enquiry Received. Ready for backend/CRM transmission:', formData);
+
+        // Show working success state
+        enquiryForm.style.display = 'none';
+        formStatusBox.classList.add('show');
+        showToast('Enquiry received successfully.');
+      } else {
+        showToast('Please complete all required fields.');
+      }
+    });
+
+    // Real-time input error removal upon user typing
+    ['fullName', 'email', 'phone', 'message'].forEach(fieldId => {
+      const element = document.getElementById(fieldId);
+      if (element) {
+        element.addEventListener('input', () => {
+          const group = document.getElementById(`group-${fieldId}`);
+          if (group && group.classList.contains('has-error')) {
+            group.classList.remove('has-error');
+          }
+        });
+      }
+    });
+
+    function resetEnquiryForm() {
+      enquiryForm.reset();
+      formStatusBox.classList.remove('show');
+      enquiryForm.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
