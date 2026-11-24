@@ -322,18 +322,19 @@
     }
 
     /* ==========================================================================
-       MULTI-LANGUAGE SELECTOR (LUXURY OBSIDIAN & IVORY)
+       MULTI-LANGUAGE SELECTOR & MOBILE RESPONSIVE ENGINE (OBSIDIAN & IVORY)
        ========================================================================== */
     .lang-selector-wrap {
       position: relative;
       display: inline-block;
+      user-select: none;
     }
 
     .lang-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
-      padding: 0.75rem 1.15rem;
+      padding: 0.72rem 1.15rem;
       font-family: var(--font-sans);
       font-size: 0.72rem;
       font-weight: 500;
@@ -344,6 +345,7 @@
       border: 1px solid var(--border-on-obsidian);
       cursor: pointer;
       transition: var(--transition-smooth);
+      white-space: nowrap;
     }
 
     .lang-btn:hover,
@@ -360,8 +362,8 @@
     }
 
     .lang-chevron {
-      width: 11px;
-      height: 11px;
+      width: 10px;
+      height: 10px;
       stroke: var(--color-ivory);
       transition: transform 0.3s ease;
       flex-shrink: 0;
@@ -371,11 +373,40 @@
       transform: rotate(180deg);
     }
 
+    .lang-label-full {
+      display: inline;
+    }
+
+    .lang-label-short {
+      display: none;
+      font-weight: 600;
+    }
+
+    /* Backdrop for mobile drawer / bottom sheet */
+    .lang-backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 1040;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    .lang-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Dropdown / Bottom Sheet */
     .lang-dropdown {
       position: absolute;
       top: calc(100% + 0.65rem);
       right: 0;
-      width: 360px;
+      width: 380px;
+      max-height: 520px;
       background-color: rgba(23, 23, 23, 0.98);
       border: 1px solid rgba(243, 239, 230, 0.22);
       box-shadow: 0 24px 48px rgba(0, 0, 0, 0.85);
@@ -388,6 +419,7 @@
       z-index: 1050;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
 
     .lang-dropdown.open {
@@ -396,23 +428,76 @@
       transform: translateY(0);
     }
 
+    .lang-sheet-handle {
+      display: none;
+      width: 44px;
+      height: 4px;
+      background-color: rgba(243, 239, 230, 0.35);
+      border-radius: 2px;
+      margin: 0.85rem auto 0 auto;
+    }
+
     .lang-dropdown-header {
-      padding: 0.9rem 1.15rem;
+      padding: 1rem 1.25rem;
       border-bottom: 1px solid var(--border-on-obsidian);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 0.68rem;
+      background-color: rgba(23, 23, 23, 0.95);
+    }
+
+    .lang-header-title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .lang-main-title {
+      font-size: 0.72rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
+      color: var(--color-ivory);
+      font-weight: 500;
+    }
+
+    .lang-sub-title {
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
       color: var(--subtle-on-obsidian);
+    }
+
+    .lang-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
 
     .lang-count-badge {
       font-size: 0.62rem;
-      padding: 0.2rem 0.5rem;
+      padding: 0.25rem 0.55rem;
       border: 1px solid var(--border-on-obsidian);
       letter-spacing: 0.12em;
+      color: var(--subtle-on-obsidian);
+      text-transform: uppercase;
+    }
+
+    .lang-close-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--border-on-obsidian);
+      color: var(--color-ivory);
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      transition: var(--transition-smooth);
+    }
+
+    .lang-close-btn:hover {
+      background-color: var(--color-ivory);
+      color: var(--color-obsidian);
     }
 
     .lang-grid {
@@ -421,12 +506,12 @@
       gap: 1px;
       background-color: rgba(243, 239, 230, 0.08);
       overflow-y: auto;
-      max-height: 380px;
+      max-height: 420px;
     }
 
     .lang-option {
       background-color: var(--color-obsidian);
-      padding: 0.75rem 0.9rem;
+      padding: 0.85rem 1rem;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -471,8 +556,8 @@
 
     .lang-active-check {
       position: absolute;
-      top: 0.75rem;
-      right: 0.75rem;
+      top: 0.85rem;
+      right: 0.85rem;
       font-size: 0.75rem;
       color: var(--color-ivory);
       display: none;
@@ -504,13 +589,11 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 0.5rem;
-      max-height: 220px;
-      overflow-y: auto;
       padding-right: 0.25rem;
     }
 
     .mobile-lang-chip {
-      padding: 0.65rem 0.8rem;
+      padding: 0.75rem 0.85rem;
       border: 1px solid var(--border-on-obsidian);
       background-color: transparent;
       color: var(--color-ivory);
@@ -520,6 +603,9 @@
       flex-direction: column;
       gap: 0.15rem;
       transition: var(--transition-smooth);
+      min-height: 54px;
+      justify-content: center;
+      position: relative;
     }
 
     .mobile-lang-chip:hover {
@@ -534,21 +620,30 @@
     }
 
     .mobile-lang-chip.active .mobile-lang-chip-native,
-    .mobile-lang-chip.active .mobile-lang-chip-latin {
+    .mobile-lang-chip.active .mobile-lang-chip-latin,
+    .mobile-lang-chip.active .mobile-lang-chip-check {
       color: var(--color-obsidian);
     }
 
     .mobile-lang-chip-native {
       font-family: var(--font-serif);
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 500;
     }
 
     .mobile-lang-chip-latin {
-      font-size: 0.6rem;
+      font-size: 0.62rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       opacity: 0.8;
+    }
+
+    .mobile-lang-chip-check {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--color-ivory);
     }
 
     /* Hide Google Translate UI elements while maintaining translation engine */
@@ -577,24 +672,75 @@
       box-shadow: none !important;
     }
 
+    /* Responsive Adjustments for Mobile & Tablets */
     @media (max-width: 991px) {
-      .lang-dropdown {
-        width: 300px;
-        right: 0;
+      .lang-label-full {
+        display: none;
+      }
+      .lang-label-short {
+        display: inline;
       }
       .lang-btn {
         padding: 0.55rem 0.85rem;
-        font-size: 0.68rem;
+        font-size: 0.7rem;
+        gap: 0.4rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .lang-sheet-handle {
+        display: block;
+      }
+      .lang-close-btn {
+        display: flex;
+      }
+      .lang-dropdown {
+        position: fixed !important;
+        top: auto !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-height: 85vh !important;
+        border-top: 1px solid var(--border-on-obsidian) !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+        border-radius: 20px 20px 0 0 !important;
+        transform: translateY(100%) !important;
+        transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.38s ease !important;
+        box-shadow: 0 -12px 48px rgba(0, 0, 0, 0.95) !important;
+        background-color: rgba(23, 23, 23, 0.99) !important;
+        z-index: 1050 !important;
+      }
+      .lang-dropdown.open {
+        transform: translateY(0) !important;
+      }
+      .lang-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        max-height: calc(85vh - 90px) !important;
+        padding-bottom: 2.5rem !important;
+      }
+      .lang-option {
+        padding: 1rem 1.15rem !important;
+        min-height: 58px !important;
+      }
+      .lang-native {
+        font-size: 1.15rem !important;
+      }
+      .lang-latin {
+        font-size: 0.68rem !important;
       }
     }
 
     @media (max-width: 480px) {
-      .lang-dropdown {
-        width: calc(100vw - 2.5rem);
-        right: -60px;
+      .mobile-lang-chips {
+        grid-template-columns: 1fr 1fr;
+      }
+      .lang-grid {
+        grid-template-columns: 1fr 1fr !important;
       }
     }
-
 
     /* Mobile Hamburger */
     .mobile-menu-toggle {
@@ -635,14 +781,17 @@
       left: 0;
       width: 100%;
       height: 100vh;
+      height: 100dvh;
       background-color: var(--color-obsidian);
       z-index: 999;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 4rem var(--gutter);
+      justify-content: flex-start;
+      padding: 5.5rem var(--gutter) 4rem var(--gutter);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
       transform: translateY(-100%);
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
       border-bottom: 1px solid var(--border-on-obsidian);
     }
 
@@ -1865,25 +2014,39 @@
       <!-- Right: Primary CTA and Mobile Toggle -->
       <div class="nav-cta-wrap">
         <!-- Luxury Multi-Language Selector -->
-        <div class="lang-selector-wrap" id="langSelectorWrap">
-          <button class="lang-btn" id="langBtn" aria-label="Select Language" aria-expanded="false" aria-haspopup="true">
+        <div class="lang-selector-wrap notranslate" id="langSelectorWrap" translate="no">
+          <button class="lang-btn notranslate" id="langBtn" aria-label="Select Language" aria-expanded="false" aria-haspopup="true" translate="no">
             <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
             </svg>
-            <span class="lang-current-label" id="currentLangLabel">ENGLISH</span>
+            <span class="lang-current-label notranslate" id="currentLangLabel" translate="no">
+              <span class="lang-label-full notranslate" id="fullLangLabel" translate="no">ENGLISH</span>
+              <span class="lang-label-short notranslate" id="shortLangLabel" translate="no">EN</span>
+            </span>
             <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
 
-          <div class="lang-dropdown" id="langDropdown" role="menu" aria-label="Language Options">
-            <div class="lang-dropdown-header">
-              <span>SELECT LANGUAGE / भाषा</span>
-              <span class="lang-count-badge">12 LANGUAGES</span>
+          <!-- Backdrop for mobile sheet & outside click -->
+          <div class="lang-backdrop" id="langBackdrop"></div>
+
+          <!-- Language Dropdown (Desktop) / Bottom Sheet (Mobile) -->
+          <div class="lang-dropdown notranslate" id="langDropdown" role="dialog" aria-label="Select Language" translate="no">
+            <div class="lang-sheet-handle"></div>
+            <div class="lang-dropdown-header notranslate" translate="no">
+              <div class="lang-header-title notranslate" translate="no">
+                <span class="lang-main-title notranslate" translate="no">SELECT LANGUAGE</span>
+                <span class="lang-sub-title notranslate" translate="no">भाषा चुनें</span>
+              </div>
+              <div class="lang-header-actions notranslate" translate="no">
+                <span class="lang-count-badge notranslate" translate="no">12 LANGUAGES</span>
+                <button class="lang-close-btn notranslate" id="langCloseBtn" aria-label="Close Language Menu" translate="no">✕</button>
+              </div>
             </div>
-            <div class="lang-grid" id="desktopLangGrid">
+            <div class="lang-grid notranslate" id="desktopLangGrid" translate="no">
               <!-- Rendered via JS -->
             </div>
           </div>
@@ -1909,16 +2072,16 @@
     </ul>
 
     <!-- Mobile Language Section -->
-    <div class="mobile-lang-section">
-      <div class="mobile-lang-title">
+    <div class="mobile-lang-section notranslate" id="mobileLangSection" translate="no">
+      <div class="mobile-lang-title notranslate" translate="no">
         <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
           <circle cx="12" cy="12" r="10"></circle>
           <line x1="2" y1="12" x2="22" y2="12"></line>
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
         </svg>
-        <span>SELECT LANGUAGE / भाषा चुनें</span>
+        <span class="notranslate" translate="no">SELECT LANGUAGE / भाषा चुनें</span>
       </div>
-      <div class="mobile-lang-chips" id="mobileLangChips">
+      <div class="mobile-lang-chips notranslate" id="mobileLangChips" translate="no">
         <!-- Rendered via JS -->
       </div>
     </div>
@@ -2802,29 +2965,33 @@
 
     // ==========================================================================
     // MULTI-LANGUAGE SYSTEM (Top Indian Languages + English)
+    // Protected with notranslate to prevent machine translation of language labels
     // ==========================================================================
     const SUPPORTED_LANGS = [
-      { code: 'en', native: 'English', latin: 'English', region: 'All India' },
-      { code: 'hi', native: 'हिन्दी', latin: 'Hindi', region: 'National / North' },
-      { code: 'pa', native: 'ਪੰਜਾਬੀ', latin: 'Punjabi', region: 'Punjab / North' },
-      { code: 'bn', native: 'বাংলা', latin: 'Bengali', region: 'West Bengal / East' },
-      { code: 'gu', native: 'ગુજરાતી', latin: 'Gujarati', region: 'Gujarat / West' },
-      { code: 'mr', native: 'मराठी', latin: 'Marathi', region: 'Maharashtra' },
-      { code: 'ta', native: 'தமிழ்', latin: 'Tamil', region: 'Tamil Nadu / South' },
-      { code: 'te', native: 'తెలుగు', latin: 'Telugu', region: 'Andhra / Telangana' },
-      { code: 'kn', native: 'ಕನ್ನಡ', latin: 'Kannada', region: 'Karnataka / South' },
-      { code: 'ml', native: 'മലയാളം', latin: 'Malayalam', region: 'Kerala / South' },
-      { code: 'ur', native: 'اردو', latin: 'Urdu', region: 'Pan-India' },
-      { code: 'or', native: 'ଓଡ଼ିଆ', latin: 'Odia', region: 'Odisha / East' }
+      { code: 'en', native: 'English', latin: 'English', short: 'EN' },
+      { code: 'hi', native: 'हिन्दी', latin: 'Hindi', short: 'HI' },
+      { code: 'pa', native: 'ਪੰਜਾਬੀ', latin: 'Punjabi', short: 'PA' },
+      { code: 'bn', native: 'বাংলা', latin: 'Bengali', short: 'BN' },
+      { code: 'gu', native: 'ગુજરાતી', latin: 'Gujarati', short: 'GU' },
+      { code: 'mr', native: 'मराठी', latin: 'Marathi', short: 'MR' },
+      { code: 'ta', native: 'தமிழ்', latin: 'Tamil', short: 'TA' },
+      { code: 'te', native: 'తెలుగు', latin: 'Telugu', short: 'TE' },
+      { code: 'kn', native: 'ಕನ್ನಡ', latin: 'Kannada', short: 'KN' },
+      { code: 'ml', native: 'മലയാളം', latin: 'Malayalam', short: 'ML' },
+      { code: 'ur', native: 'اردو', latin: 'Urdu', short: 'UR' },
+      { code: 'or', native: 'ଓଡ଼ିଆ', latin: 'Odia', short: 'OR' }
     ];
 
     let currentLanguage = localStorage.getItem('preferred_language') || 'en';
 
     const langBtn = document.getElementById('langBtn');
     const langDropdown = document.getElementById('langDropdown');
+    const langBackdrop = document.getElementById('langBackdrop');
+    const langCloseBtn = document.getElementById('langCloseBtn');
     const desktopLangGrid = document.getElementById('desktopLangGrid');
     const mobileLangChips = document.getElementById('mobileLangChips');
-    const currentLangLabel = document.getElementById('currentLangLabel');
+    const fullLangLabel = document.getElementById('fullLangLabel');
+    const shortLangLabel = document.getElementById('shortLangLabel');
 
     // Populate Desktop & Mobile Language Selectors
     function renderLanguageOptions() {
@@ -2835,27 +3002,34 @@
       SUPPORTED_LANGS.forEach(lang => {
         const isActive = lang.code === currentLanguage;
 
-        // Desktop item
+        // Desktop / Bottom-Sheet Option
         const optionBtn = document.createElement('button');
-        optionBtn.className = `lang-option ${isActive ? 'active' : ''}`;
+        optionBtn.className = `lang-option notranslate ${isActive ? 'active' : ''}`;
+        optionBtn.setAttribute('translate', 'no');
         optionBtn.setAttribute('data-lang', lang.code);
         optionBtn.innerHTML = `
-          <span class="lang-native">${lang.native}</span>
-          <span class="lang-latin">${lang.latin}</span>
-          <span class="lang-active-check">✓</span>
+          <span class="lang-native notranslate" translate="no">${lang.native}</span>
+          <span class="lang-latin notranslate" translate="no">${lang.latin}</span>
+          <span class="lang-active-check notranslate" translate="no">✓</span>
         `;
-        optionBtn.addEventListener('click', () => switchLanguage(lang.code));
+        optionBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          switchLanguage(lang.code);
+        });
         desktopLangGrid.appendChild(optionBtn);
 
-        // Mobile chip
+        // Mobile Drawer Chip
         const chipBtn = document.createElement('button');
-        chipBtn.className = `mobile-lang-chip ${isActive ? 'active' : ''}`;
+        chipBtn.className = `mobile-lang-chip notranslate ${isActive ? 'active' : ''}`;
+        chipBtn.setAttribute('translate', 'no');
         chipBtn.setAttribute('data-lang', lang.code);
         chipBtn.innerHTML = `
-          <span class="mobile-lang-chip-native">${lang.native}</span>
-          <span class="mobile-lang-chip-latin">${lang.latin}</span>
+          <span class="mobile-lang-chip-native notranslate" translate="no">${lang.native}</span>
+          <span class="mobile-lang-chip-latin notranslate" translate="no">${lang.latin}</span>
+          ${isActive ? '<span class="mobile-lang-chip-check notranslate" translate="no">✓</span>' : ''}
         `;
-        chipBtn.addEventListener('click', () => {
+        chipBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
           switchLanguage(lang.code);
           mobileDrawer.classList.remove('open');
           mobileMenuToggle.classList.remove('active');
@@ -2865,15 +3039,32 @@
         mobileLangChips.appendChild(chipBtn);
       });
 
-      // Update Header Button Label
+      // Update Header Button Labels
       const currentObj = SUPPORTED_LANGS.find(l => l.code === currentLanguage) || SUPPORTED_LANGS[0];
-      if (currentLangLabel) {
-        currentLangLabel.textContent = currentLanguage === 'en' ? 'ENGLISH' : `${currentObj.latin} (${currentObj.native})`;
+      if (fullLangLabel) {
+        fullLangLabel.textContent = currentLanguage === 'en' ? 'ENGLISH' : `${currentObj.latin} (${currentObj.native})`;
+      }
+      if (shortLangLabel) {
+        shortLangLabel.textContent = currentObj.short;
       }
     }
 
-    // Toggle dropdown
-    if (langBtn && langDropdown) {
+    // Toggle dropdown / mobile sheet
+    function openLangDropdown() {
+      if (!langDropdown || !langBtn) return;
+      langDropdown.classList.add('open');
+      if (langBackdrop) langBackdrop.classList.add('open');
+      langBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeLangDropdown() {
+      if (!langDropdown || !langBtn) return;
+      langDropdown.classList.remove('open');
+      if (langBackdrop) langBackdrop.classList.remove('open');
+      langBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    if (langBtn) {
       langBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         const isOpen = langDropdown.classList.contains('open');
@@ -2885,16 +3076,17 @@
       });
     }
 
-    function openLangDropdown() {
-      if (!langDropdown || !langBtn) return;
-      langDropdown.classList.add('open');
-      langBtn.setAttribute('aria-expanded', 'true');
+    if (langCloseBtn) {
+      langCloseBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeLangDropdown();
+      });
     }
 
-    function closeLangDropdown() {
-      if (!langDropdown || !langBtn) return;
-      langDropdown.classList.remove('open');
-      langBtn.setAttribute('aria-expanded', 'false');
+    if (langBackdrop) {
+      langBackdrop.addEventListener('click', () => {
+        closeLangDropdown();
+      });
     }
 
     // Close on click outside
@@ -2906,10 +3098,36 @@
 
     // Close on Escape
     window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && langDropdown && langDropdown.classList.contains('open')) {
+      if (e.key === 'Escape') {
         closeLangDropdown();
       }
     });
+
+    // Clear Google Translate Cookies Thoroughly across all domain permutations
+    function clearGoogleTranslateCookies() {
+      const hostname = window.location.hostname;
+      const domains = ['', hostname, '.' + hostname];
+      if (hostname.includes('.')) {
+        const rootDomain = hostname.split('.').slice(-2).join('.');
+        domains.push(rootDomain);
+        domains.push('.' + rootDomain);
+      }
+
+      const paths = ['/', ''];
+
+      domains.forEach(d => {
+        paths.forEach(p => {
+          let s1 = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=${p};`;
+          let s2 = `googtrans=/en/en; path=${p};`;
+          if (d) {
+            s1 += ` domain=${d};`;
+            s2 += ` domain=${d};`;
+          }
+          document.cookie = s1;
+          document.cookie = s2;
+        });
+      });
+    }
 
     // Core Translation Switcher
     function switchLanguage(langCode) {
@@ -2923,31 +3141,25 @@
         showToast(`Translating site to ${langObj.native} (${langObj.latin})...`);
       }
 
-      const domain = window.location.hostname;
-
       if (langCode === 'en') {
-        // Reset to original English
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        document.cookie = 'googtrans=/en/en; path=/;';
-        if (domain && domain !== 'localhost' && !domain.match(/^\d+\.\d+\.\d+\.\d+$/)) {
-          document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.' + domain + '; path=/;';
-          document.cookie = 'googtrans=/en/en; domain=.' + domain + '; path=/;';
-        }
-
+        // Clear cookies and restore English
+        clearGoogleTranslateCookies();
         const combo = document.querySelector('.goog-te-combo');
         if (combo) {
           combo.value = 'en';
           combo.dispatchEvent(new Event('change'));
         }
-        setTimeout(() => { window.location.reload(); }, 300);
+        setTimeout(() => { window.location.reload(); }, 250);
         return;
       }
 
       // Set cookie for chosen language
       const cookieValue = `/en/${langCode}`;
       document.cookie = `googtrans=${cookieValue}; path=/;`;
-      if (domain && domain !== 'localhost' && !domain.match(/^\d+\.\d+\.\d+\.\d+$/)) {
-        document.cookie = `googtrans=${cookieValue}; domain=.${domain}; path=/;`;
+      const hostname = window.location.hostname;
+      if (hostname && hostname !== 'localhost' && !hostname.match(/^\d+\.\d+\.\d+\.\d+$/)) {
+        document.cookie = `googtrans=${cookieValue}; domain=.${hostname}; path=/;`;
+        document.cookie = `googtrans=${cookieValue}; domain=${hostname}; path=/;`;
       }
 
       // Trigger Google Translate Combo
@@ -2960,11 +3172,15 @@
       }
     }
 
-    // Initialize Language Options
+    // Initialize UI
     renderLanguageOptions();
 
-    // Ensure googtrans cookie is synchronized with stored preference
-    if (currentLanguage !== 'en') {
+    // Ensure state is clean on initial load
+    if (currentLanguage === 'en') {
+      if (document.cookie.includes('googtrans=/en/')) {
+        clearGoogleTranslateCookies();
+      }
+    } else {
       const desiredCookie = `/en/${currentLanguage}`;
       if (!document.cookie.includes(`googtrans=${desiredCookie}`)) {
         document.cookie = `googtrans=${desiredCookie}; path=/;`;
